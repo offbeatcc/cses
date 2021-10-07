@@ -1,2 +1,2 @@
-CSES Problem Set Club
-=====================
+CSES Problem Solving Club
+=========================
