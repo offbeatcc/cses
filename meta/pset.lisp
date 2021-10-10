@@ -100,8 +100,8 @@ delimiters in marks."
     (pop sections)
     sections))
 
-(defun print-markdown-header ()
-  (format t "# Numbered List of Problems from CSES Problem Set
+(defun markdown-header ()
+  "# Numbered List of Problems from CSES Problem Set
 
 This document contains a numbered list of all the problems from the
 [CSES Problem Set](https://cses.fi/problemset/). Two ordinal numbers
@@ -111,28 +111,39 @@ shows the position of the problem within a section.
 
 ## Problems
 
-"))
+")
 
-(defun print-markdown-list (sections)
-  (let ((overall-total (loop for x in sections sum (length (cdr x)))))
-    (loop for (section . problems) in sections
-          with i = 1
-          do (loop for (href title) in problems
-                   and j from 1
-                   do (setf href (format nil "https://cses.fi/~a" href))
-                      (format t "* ~3,'0d/~d - ~a: ~2,'0d/~d - [~a](~a)~%"
-                              i overall-total section j (length problems)
-                              title href)
-                      (incf i)))))
+(defun markdown-list (sections)
+  (with-output-to-string (s)
+    (let ((overall-total (loop for x in sections sum (length (cdr x)))))
+      (loop for (section . problems) in sections
+            with i = 1
+            do (loop for (href title) in problems
+                     and j from 1
+                     do (setf href (format nil "https://cses.fi/~a" href))
+                        (format s "* ~3,'0d/~d - ~a: ~2,'0d/~d - [~a](~a)~%"
+                                i overall-total section j (length problems)
+                                title href)
+                        (incf i))))))
+
+(defun archive (sections)
+  (loop for (section . problems) in sections
+        with i = 1
+        append (loop for (href title) in problems
+                     collect (list i title)
+                     do (incf i))))
 
 (defun main ()
   (let* ((html (uiop:read-file-string "/tmp/problemset.html"))
-         (sections (scrape-html html)))
-    (print-markdown-header)
-    (print-markdown-list sections)))
+         (sections (scrape-html html))
+         (text (format nil "~a~a" (markdown-header) (markdown-list sections)))
+         (archive (archive sections)))
+    (with-open-file (f "problemset.lisp" :direction :output
+                                         :if-exists :supersede)
+      (with-standard-io-syntax
+        (print archive f)))
+    (with-open-file (f "problemset.md" :direction :output
+                                       :if-exists :supersede)
+      (write-sequence text f))))
 
 (main)
-
-
-
-
