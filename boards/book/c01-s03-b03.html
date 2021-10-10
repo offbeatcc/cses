@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Modulo Operator</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Modulo Operator
+
+
+## Results
+
+```
+          C/C++/
+   Code  Java/JS   Python
+-------  -------  -------
+ 7 %  5        2        2
+ 7 % -5        2       -3
+-7 %  5       -2        3
+-7 % -5       -2       -2
+```
+
+
+# C/C++/Java/JavaScript Behaviour
+
+The standards specify that the `%` operator should satisfy this
+identity:
+
+```
+(a / b) * b + a % b = a.
+```
+
+This makes sense because with `q = a / b` and `r = a % b`, we get
+
+```
+q * b + r = a.
+```
+
+Examples:
+
+```
+ 7 %  5 =  2  because  ( 7 /  5) * ( 5) + 2 = ( 1)( 5) + 2 =  7.
+ 7 % -5 =  2  because  ( 7 / -5) * (-5) + 2 = (-1)(-5) + 2 =  7.
+-7 %  5 = -2  because  (-7 /  5) * ( 5) - 2 = (-1)( 5) - 2 = -7.
+-7 % -5 = -2  because  (-7 / -5) * (-5) - 2 = ( 1)(-5) - 2 = -7.
+```
+
+
+# Python Behaviour
+
+The language reference specifies that the `%` operator should satisfy
+the identity:
+
+```
+x == (x // y) * y + (x % y)
+```
+
+Examples:
+
+```
+ 7 %  5 =  2  because  ( 7 //  5) * ( 5) + 2 = ( 1)( 5) + 2 =  7.
+ 7 % -5 = -3  because  ( 7 // -5) * (-5) + 2 = (-2)(-5) - 3 =  7.
+-7 %  5 =  3  because  (-7 //  5) * ( 5) - 2 = (-2)( 5) + 3  = -7.
+-7 % -5 = -2  because  (-7 // -5) * (-5) - 2 = ( 1)(-5) - 2 = -7.
+```
+
+# References
+
+  - C99 ([N1256](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf)): &sect; 6.5.5 Multiplicative operators
+  - C++11 ([N3337](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3337.pdf)): &sect; 5.6 Multiplicative operators
+  - Java SE 7 ([JLS7](https://docs.oracle.com/javase/specs/jls/se7/jls7.pdf)): &sect; 15.17.3 Remainder Operator `%`
+  - JavaScript ([ECMAScript 2015](https://www.ecma-international.org/wp-content/uploads/ECMA-262_6th_edition_june_2015.pdf)): &sect; 12.16.3.3 Applying the `%` Operator
+  - Python 3.6 ([Reference](https://docs.python.org/3.6/reference/)): [&sect 6.7. Binary arithmetic operations](https://docs.python.org/3.6/reference/expressions.html#binary-arithmetic-operations)
+
+</article>
+</textarea>

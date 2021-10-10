@@ -1,13 +1,13 @@
 (defun string-starts-with (prefix string)
-  "Test that string starts with the given prefix."
   (and (<= (length prefix) (length string))
        (string= prefix string :end2 (length prefix))))
 
 (defun title-to-slug (title)
   (substitute #\_ #\- (substitute #\_ #\space (string-downcase title))))
 
-(defun filename-to-slug (filename)
-  (let* ((delim-index (search "_0" filename))
+(defun filename-to-slug (filepath)
+  (let* ((filename (file-namestring filepath))
+         (delim-index (search "_0" filename))
          (colon-index (search "." filename))
          (end-index (if delim-index delim-index colon-index)))
     (subseq filename 0 end-index)))
@@ -17,34 +17,29 @@
     (with-standard-io-syntax
       (read f))))
 
-(defun read-filenames ()
-  (loop for path in (directory "solutions/*.cc")
-        collect (file-namestring path)))
+(defun read-filepaths ()
+  (append (directory "solutions/*.cc")
+          (directory "solutions/test/*.sh")
+          (directory "boards/solutions/*.html")))
 
 (defun slug-number-map (problems)
   (loop for (n title) in problems
         collect (cons (title-to-slug title) n)))
 
-(defun number-filename (filename slug-number-map)
-  (let* ((slug (filename-to-slug filename))
+(defun number-filename (filepath slug-number-map)
+  (let* ((filename (file-namestring filepath))
+         (slug (filename-to-slug filename))
          (num (cdr (assoc slug slug-number-map :test #'string=)))
-         (old-path (format nil "solutions/~a" filename))
-         (new-path (format nil "~3,'0d_~a" num filename)))
+         (newpath (format nil "~3,'0d_~a" num filename)))
     (cond (num
-           (format t "~&renaming ~a -> ~a ...~%" old-path new-path)
-           (rename-file old-path new-path))
+           (format t "~&renaming ~a -> ~a~%" filepath newpath)
+           (rename-file filepath newpath))
           (t
-           (format t "~&ignored ~a~%" filename)))))
-
-(defun find-and-number (num title filenames)
-  (loop for filename in filenames
-        when (string= (title-to-slug title) (filename-to-slug filename))
-          do (number-filename num filename)
-          and collect filename))
+           (format t "~&ignoring ~a~%" filename)))))
 
 (defun main ()
   (let ((slug-number-map (slug-number-map (read-problems))))
-    (loop for filename in (read-filenames)
-          do (number-filename filename slug-number-map))))
+    (loop for filepath in (read-filepaths)
+          do (number-filename filepath slug-number-map))))
 
 (main)
