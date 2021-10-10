@@ -8,9 +8,13 @@ pset:
 	curl -sS https://cses.fi/problemset/ -o /tmp/problemset.html
 	sbcl --script meta/pset.lisp
 
+boards: FORCE
+	sbcl --script meta/boards.lisp
+
 # Update CSS file from the mirror website.
 css: FORCE
-	curl -sS https://offbeatcc.github.io/css/main.css -o web/main.css
+	curl -sS https://offbeatcc.github.io/css/main.css -o website/main.css
+	cp website/main.css boards/
 
 # Add problem serial number as prefix to code files in solutions directory.
 num:
