@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Permutations: Alternative Solutions</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Permutations: Alternative Solutions
+
+## Odd \( n \), Start With \( n \)
+
+Example: \( 5, 3, 1, 4, 2 \).
+
+General: \( n, \dots, 1, (n - 2), \dots 2 \).
+
+Works for: \( (n - 2) \ge 3 \implies n \ge 5 \).
+
+
+## Odd \( n \), Start With \( n - 1 \)
+
+Example: \( 4, 2, 5, 3, 1 \).
+
+General: \( (n - 2), \dots 2, n, \dots, 1 \).
+
+Works for: \( n \ge 4 \implies n \ge 5 \).
+
+
+## Even \( n \), Start With \( n \)
+
+Example: \( 6, 4, 2, 5, 3, 1 \).
+
+General: \( n, \dots, 2, (n - 1), \dots 1 \).
+
+Works for: \( (n - 1) \ge 4 \implies n \ge 5 \implies n \ge 6 \).
+
+
+## Even \( n \), Start With \( n - 1 \)
+
+Example: \( 5, 3, 1, 6, 4, 2 \).
+
+General: \( (n - 1), \dots, 1, n, \dots 2 \).
+
+Works for: \( n \ge 3 \implies n \ge 4 \).
+
+
+## Summary
+
+* Start with \( n \): Works for \( n \ge 5 \), in general.
+* Start with \( n - 1 \): Works for \( n \ge 4 \), in general.
+
+</article>
+</textarea>
