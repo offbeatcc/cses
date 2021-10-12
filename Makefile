@@ -1,4 +1,4 @@
-pub:
+pub: boards
 	git diff --exit-code
 	git diff --cached --exit-code
 	git push
