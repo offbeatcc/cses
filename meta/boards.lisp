@@ -63,8 +63,8 @@
   (sort (directory "boards/book/c*.html") #'string< :key #'namestring))
 
 (defun solution-board-files ()
-  "Return the list of board HTML files for solutions."
-  (sort (directory "boards/solutions/*.html") #'string< :key #'namestring))
+  "Return the list of board HTML files for problems."
+  (sort (directory "boards/problems/*.html") #'string< :key #'namestring))
 
 (defun chapter-num (chapter-key)
   "Given a chapter key, return the chapter number as a string."
@@ -93,7 +93,7 @@
 
 (defun add-solution-board-html (boards-html board-key filename filepath)
     (format nil "~a
-        <li id=\"~a\"><a href=\"solutions/~a\">~a</a></li>"
+        <li id=\"~a\"><a href=\"problems/~a\">~a</a></li>"
           boards-html
           board-key
           filename

@@ -1,7 +1,7 @@
 (defun read-filepaths ()
-  (append (directory "solutions/*.cc")
-          (directory "solutions/test/*.sh")
-          (directory "boards/solutions/*.html")))
+  (append (directory "code/*.cc")
+          (directory "code/test/*.sh")
+          (directory "boards/problems/*.html")))
 
 (defun filename-numbered-p (filepath)
   (let ((filename (file-namestring filepath)))
