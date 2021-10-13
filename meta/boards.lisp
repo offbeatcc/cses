@@ -91,12 +91,13 @@
           filename
           (read-page-title filepath)))
 
-(defun add-problem-board-html (boards-html board-key filename filepath)
+(defun add-problem-board-html (boards-html filename filepath)
     (format nil "~a
-        <li id=\"~a\"><a href=\"problems/~a\">~a</a></li>"
+        <li id=\"~a\"><a href=\"problems/~a\">~a: ~a</a></li>"
           boards-html
-          board-key
+          (subseq filename 0 (search "." filename))
           filename
+          (subseq filename 0 3)
           (read-page-title filepath)))
 
 (defun chapter-list-html ()
@@ -136,9 +137,8 @@
     (dolist (path (problem-board-files))
       (format t "~&Found ~a~%" path)
       (setf filename (file-namestring path))
-      (setf board-key (subseq filename 0 (search "." filename)))
       (setf boards-html
-            (add-problem-board-html boards-html board-key filename path)))
+            (add-problem-board-html boards-html filename path)))
     boards-html))
 
 (defun main ()
