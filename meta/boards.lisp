@@ -62,7 +62,7 @@
   "Return the list of board HTML files for book notes."
   (sort (directory "boards/book/c*.html") #'string< :key #'namestring))
 
-(defun solution-board-files ()
+(defun problem-board-files ()
   "Return the list of board HTML files for problems."
   (sort (directory "boards/problems/*.html") #'string< :key #'namestring))
 
@@ -91,7 +91,7 @@
           filename
           (read-page-title filepath)))
 
-(defun add-solution-board-html (boards-html board-key filename filepath)
+(defun add-problem-board-html (boards-html board-key filename filepath)
     (format nil "~a
         <li id=\"~a\"><a href=\"problems/~a\">~a</a></li>"
           boards-html
@@ -129,27 +129,29 @@
     (setf chapters-html
           (add-book-chapter-html chapters-html chapter-key boards-html))))
 
-(defun solution-list-html ()
+(defun problem-list-html ()
   (let ((boards-html "")
         (filename)
         (board-key))
-    (dolist (path (solution-board-files))
+    (dolist (path (problem-board-files))
       (format t "~&Found ~a~%" path)
       (setf filename (file-namestring path))
       (setf board-key (subseq filename 0 (search "." filename)))
       (setf boards-html
-            (add-solution-board-html boards-html board-key filename path)))
+            (add-problem-board-html boards-html board-key filename path)))
     boards-html))
 
 (defun main ()
   "Generate boards/index.html"
-  (let ((output-html (uiop:read-file-string "meta/boards.html")))
+  (let ((output-html (uiop:read-file-string "meta/boards.html"))
+        (output-path "boards/index.html"))
     (setf output-html (replace-string "{{ chapter-list-items }}"
                                       (chapter-list-html)
                                       output-html))
-    (setf output-html (replace-string "{{ solution-list-items }}"
-                                      (solution-list-html)
+    (setf output-html (replace-string "{{ problem-list-items }}"
+                                      (problem-list-html)
                                       output-html))
-    (write-file-string "boards/index.html" output-html)))
+    (write-file-string output-path output-html)
+    (format t "~&Written ~a~%" output-path)))
 
 (main)
