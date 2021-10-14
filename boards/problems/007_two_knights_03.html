@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Knights: Incremental Solution: Formula</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  td {
+    width: 2em;
+    height: 2em;
+    text-align: center !important;
+  }
+  td.new {
+    border-style: dashed;
+  }
+  .c1 {
+    color: orange;
+  }
+  .c2 {
+    color: violet;
+  }
+  .c3 {
+    color: lightgreen;
+  }
+</style>
+<textarea style="display: none">
+<article>
+
+# Two Knights: Incremental Solution: Formula
+
+Let \( f(k) \) be the result for \( k \times k \) board. Then for \( k
+\ge 5 \) we get
+
+\[
+f(k)
+= f(k - 1)
++ \frac{(2k - 1)(k - 1)}{2} - 2
++ 5 ((k - 1)^2 - 2)
++ 4 ((k - 1)^2 - 3)
++ 2 (k - 5) ((k - 1)^2 - 4).
+\]
+
+Simplifying the above we get
+
+\[
+f(k) = f(k - 1) + 2k^3 - 3k^2 - 7k + 16.
+\]
+
+Although, we could hardcode the values \( f(1) = 0 \), \( f(2) = 6 \),
+\( f(3) = 28 \), and \( f(4) = 96 \) in the program, it turns out the
+formula above works well for \( f(2) \), \( f(3) \), and \( f(4) \)
+too! For example,
+
+\begin{align*}
+  f(1) &= 0, \\
+  f(2) &= f(1) + 2(2)^3 - 3(2)^2 - 7(2) + 16 = 16 - 12 - 14 + 16 = 6, \\
+  f(3) &= f(2) + 2(3)^3 - 3(3)^2 - 7(3) + 16 = 6 + 54 - 27 - 21 + 16 = 28, \\
+  f(4) &= f(3) + 2(4)^3 - 3(4)^2 - 7(4) + 16 = 28 + 128 - 48 - 28 + 16 = 96, \\
+  f(5) &= f(4) + 2(5)^3 - 3(5)^2 - 7(5) + 16 = 96 + 250 - 75 - 35 + 16 = 252, \\
+  &\;\,\vdots
+\end{align*}
+
+</article>
+</textarea>

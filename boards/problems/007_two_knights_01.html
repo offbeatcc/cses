@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Knights: Incremental Solution: Introduction</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  td {
+    width: 2em;
+    height: 2em;
+    text-align: center !important;
+  }
+  td.new {
+    border-style: dashed;
+  }
+  .c1 {
+    color: orange;
+  }
+  .c2 {
+    color: violet;
+  }
+  .c3 {
+    color: lightgreen;
+  }
+</style>
+<textarea style="display: none">
+<section>
+<section>
+
+# Two Knights: Incremental Solution: Cases
+
+Let us assume we know the result for \( k = 5 \). In fact, it is \(
+252 \).
+
+Let us now compute the *increment* in the result when we go from \( k
+= 5 \) to \( k = 6 \). We first consider \( 5 \times 5 \) board and
+extend it on the right and bottom to make a \( 6 \times 6 \) board.
+
+We call the \( 11 \) new cells in the extended part of the board
+(shown as dashed cells below) as *new cells*. We call the \( 16 \)
+cells of the original board (shown as solid cells below) as *old
+cells*.
+
+* Case 1: Number of ways to place both knights on the new cells.
+* Case 2: Number of ways to place exactly one knight on a new cell.
+  * Type A: New cells near old corner cells.
+  * Type B: New cells next to cells of type A.
+  * Type C: Remaining new cells.
+
+We will also obtain general formulas in terms of \( k \) where \( k \)
+is the size of the extended board and \( k \ge 5 \).
+
+</section>
+<section>
+
+<table>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c1">A</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c2">B</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c3">C</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c2">B</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c1">A</td></tr>
+  <tr><td class="new c1">A</td><td class="new c2">B</td><td class="new c3">C</td><td class="new c2">B</td><td class="new c1">A</td><td class="new c1">A</td></tr>
+</table>
+
+</section>
+</section>
+</textarea>

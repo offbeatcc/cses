@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Knights: Incremental Solution: Cases</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  td {
+    width: 2em;
+    height: 2em;
+    text-align: center !important;
+  }
+  td.new {
+    border-style: dashed;
+  }
+  .c1 {
+    color: orange;
+  }
+  .c2 {
+    color: violet;
+  }
+  .c3 {
+    color: lightgreen;
+  }
+</style>
+<textarea style="display: none">
+
+# Two Knights: Incremental Solution: Cases
+
+<section>
+<section>
+
+## Case 1: Both Knights on Extended Cells
+
+<table>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c1">&cross;</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c2">&cross;</td></tr>
+  <tr><td class="new"></td><td class="new"></td><td class="new"></td><td class="new c2">&cross;</td><td class="new c1">&cross;</td><td class="new"></td></tr>
+</table>
+
+New placements: \( \binom{11}{2} - 2 = 53 \).
+
+Formula: \( \binom{2k - 1}{2} - 2 = \frac{(2k - 1)(k - 1)}{2} - 2 \).
+
+## Case 2: Type A: New Cells Near Old Corner Cells
+
+<table>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c1">&cross;</td></tr>
+  <tr><td></td><td></td><td></td><td class="new c1">&cross;</td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td class="c1">&cross;</td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td class="c2">&cross;</td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td class="c2">&cross;</td><td></td><td class="new">&cross;</td></tr>
+  <tr><td class="new">&cross;</td><td class="new"></td><td class="new"></td><td class="new"></td><td class="new">&cross;</td><td class="new c2">&cross;</td></tr>
+</table>
+
+New placements: \( 5 \cdot (25 - 2) = 115 \).
+
+Formula: \( 5 ((k - 1)^2 - 2) \).
+
+</section>
+<section>
+
+## Case 2: Type B: New Cells Next to Cells of Type A
+
+<table>
+  <tr><td></td><td></td><td></td><td class="c1">&cross;</td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c1">&cross;</td></tr>
+  <tr><td></td><td></td><td></td><td class="c1">&cross;</td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td class="c1">&cross;</td><td class="new">&cross;</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new"></td></tr>
+  <tr><td class="new"></td><td class="new">&cross;</td><td class="new"></td><td class="new">&cross;</td><td class="new"></td><td class="new"></td></tr>
+</table>
+
+New placements: \( 4 \cdot (25 - 3) = 88 \).
+
+Formula: \( 4 ((k - 1)^2 - 3) \).
+
+
+## Case 2: Type C: Remaining Cells
+
+<table>
+  <tr><td></td><td></td><td></td><td></td><td class="c1">&cross;</td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td class="c1">&cross;</td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td class="new c1">&cross;</td></tr>
+  <tr><td></td><td></td><td></td><td class="c1">&cross;</td><td></td><td class="new"></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td class="c1">&cross;</td><td class="new"></td></tr>
+  <tr><td class="new"></td><td class="new"></td><td class="new"></td><td class="new"></td><td class="new"></td><td class="new"></td></tr>
+</table>
+
+New placements: \( 2 \cdot 1 \cdot (25 - 4) = 42 \).
+
+Formula: \( 2 (k - 5) ((k - 1)^2 - 4) \).
+
+</section>
+</section>
+</textarea>
