@@ -14,13 +14,17 @@ check()
     else
         printf 'fail\n'
         printf '%s\n' "$diff"
+        exit 1
     fi
 }
 
 main()
 {
-    . test/"${1%.*}.sh"
+    F=${1%.*}
+    F=${F%_0*}
+    . test/"${F%.*}.sh"
     printf 'done\n'
+    unset F
 }
 
 main "$@"
