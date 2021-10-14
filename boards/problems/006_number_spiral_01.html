@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Number Spiral: Edges</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<section>
+<section>
+
+# Number Spiral: Edges
+
+\begin{array}{r r r r r}
+   1 &  2 &  9 & 10 & 25 & \dots \\
+   4 &  3 &  8 & 11 & 24 & \dots \\
+   5 &  6 &  7 & 12 & 23 & \dots \\
+  16 & 15 & 14 & 13 & 22 & \dots \\
+  17 & 18 & 19 & 20 & 21 & \dots \\
+  \vdots & \vdots & \vdots & \vdots & \vdots
+\end{array}
+
+Let \( f(y, x) \) represent the number in row \( y \) and column \( x
+\).
+
+
+## Top Edge
+
+\[
+f(1, x) = \begin{cases}
+  x^2           & \text{ if } x \text{ is odd}, \\
+  (x - 1)^2 + 1 & \text{ if } x \text{ is even}.
+\end{cases}
+\]
+
+
+## Left Edge
+
+\[
+f(y, 1) = \begin{cases}
+  y^2           & \text{ if } y \text{ is even}, \\
+  (y - 1)^2 + 1 & \text{ if } y \text{ is odd}.
+\end{cases}
+\]
+
+</section>
+<section>
+
+## Places Relative to Diagonal
+
+\( (y, x) \) falls exactly on the diagonal if and only if \( y = x \).
+
+\( (y, x) \) falls above/on the right of diagonal if and only if \( y < x \).
+
+\( (y, x) \) falls below/on the left of the diagonal if and only if \( y > x \).
+
+
+## Formulas
+
+\[
+f(y, x) = \begin{cases}
+  f(1, x) - (y - 1) & \text{ if } y \le x \text{ and } x \text{ is odd}, \\
+  f(1, x) + (y - 1) & \text{ if } y \le x \text{ and } x \text{ is even}, \\
+  f(y, 1) + (x - 1) & \text{ if } y \ge x \text{ and } x \text{ is odd}, \\
+  f(y, 1) - (x - 1) & \text{ if } y \ge x \text{ and } x \text{ is even}.
+\end{cases}
+\]
+
+</section>
+
+
+
+</article>
+</textarea>
