@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Knights: Blocks in Grid: General Formula</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  td {
+    width: 2em;
+    height: 2em;
+    text-align: center !important;
+  }
+  td.hl {
+    background-color: #693;
+
+  }
+</style>
+<textarea style="display: none">
+<section>
+<section>
+
+# Blocks in Grid
+
+<table>
+  <tr>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td class="hl"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+We will call a grid with \( M \) rows and \( N \) columns a \( M
+\times N \) grid.
+
+We want to find the number of ways we can select an \( m \times n \)
+block in a \( M \times N \) grid where \( m \le M \) and \( n \le N
+\).
+
+In the above example \( M = 5 \), \( N = 7 \), \( m = 3 \), and \( n =
+4 \).
+
+</section>
+<section>
+
+The shaded \( m \times n \) block can slide \( M - m \) times to the
+bottom. Thus there are \( M - m + 1 \) ways to vertically position the
+block.
+
+Similarly, the \( m \times n \) block can slide \( N - n \) times to
+the right. Thus there are \( N - n + 1 \) ways to horizontally
+position the block.
+
+Therefore the total number of ways to position the \( m \times n \)
+block is
+\[
+(M - m + 1)(N - n + 1).
+\]
+
+</section>
+</section>
+</textarea>
