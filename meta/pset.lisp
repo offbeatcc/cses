@@ -101,7 +101,7 @@ delimiters in marks."
     sections))
 
 (defun markdown-header ()
-  "# Numbered List of Problems from CSES Problem Set
+  "# CSES Problem Set
 
 This document contains a numbered list of all the problems from the
 [CSES Problem Set](https://cses.fi/problemset/). Two ordinal numbers
@@ -111,6 +111,8 @@ shows the position of the problem within a section.
 
 ## Problems
 
+| # | Section Title | Section # | Problem Title and Link |
+| :-- | :-- | :-- | :-- |
 ")
 
 (defun markdown-list (sections)
@@ -121,7 +123,7 @@ shows the position of the problem within a section.
             do (loop for (href title) in problems
                      and j from 1
                      do (setf href (format nil "https://cses.fi/~a" href))
-                        (format s "* ~3,'0d/~d - ~a: ~2,'0d/~d - [~a](~a)~%"
+                        (format s "| ~3,'0d of ~d | ~a | ~2,'0d of ~d | [~a](~a) |~%"
                                 i overall-total section j (length problems)
                                 title href)
                         (incf i))))))
