@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Trailing Zeros: Illustration</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Trailing Zeros
+
+## Illustration With \( 10! \)
+
+\begin{align*}
+10!
+& = (1) \cdot (2) \cdot (3) \cdot (4) \cdot (5) \cdot
+    (6) \cdot (7) \cdot (8) \cdot (9) \cdot (10) \\
+& = (1) \cdot (2) \cdot (3) \cdot (2^2) \cdot (5) \cdot
+    (2 \cdot 3) \cdot (7) \cdot (2^3) \cdot (3^2) \cdot (2 \cdot 5) \\
+& = 2^8 \cdot 3^4 \cdot 5^2 \cdot 7. \\ \\
+10!
+& = 2^{\alpha(2)} \cdot 3^{\alpha(3)} \cdot 5^{\alpha(5)} \cdot 7^{\alpha(7)} \\
+& = 2^{\left\lfloor \frac{10}{2} \right\rfloor + \left\lfloor \frac{10}{4} \right\rfloor + \left\lfloor \frac{10}{8} \right\rfloor} +
+3^{\left\lfloor \frac{10}{3} \right\rfloor + \left\lfloor \frac{10}{9} \right\rfloor} +
+5^{\left\lfloor \frac{10}{5} \right\rfloor} +
+7^{\left\lfloor \frac{10}{7} \right\rfloor} \\
+& = 2^{5 + 2 + 1} + 3^{3 + 1} + 5^{2} + 7^{1} \\
+& = 2^8 \cdot 3^4 \cdot 5^2 \cdot 7.
+\end{align*}
+
+</div>
+</article>
+</textarea>

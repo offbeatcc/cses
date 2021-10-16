@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Trailing Zeros: Legendre's Formula</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Trailing Zeros: Legendre's Formula
+
+## Illustration With \( n! \)
+
+$$
+n! = \prod_{p \le n} p^{\alpha(p)}
+$$
+
+where
+
+$$
+\alpha(p) = \sum_{m=1}^{\log_p n} \left\lfloor \frac{n}{p^m} \right\rfloor.
+$$
+
+## Example for \( n = 10 \)
+
+\begin{align*}
+  \alpha(2)
+  &= \left\lfloor \frac{10}{2} \right\rfloor
+  + \left\lfloor \frac{10}{4} \right\rfloor
+  + \left\lfloor \frac{10}{8} \right\rfloor = 5 + 2 + 1 = 8. \\ \\
+  \alpha(5)
+  &= \left\lfloor \frac{10}{5} \right\rfloor = 2.
+\end{align*}
+
+</div>
+</article>
+</textarea>
