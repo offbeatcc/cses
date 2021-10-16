@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Estimating Efficiency</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  th, td {width: 8em; text-align: right !important}
+  .c1 {background: #633}
+  .c2 {background: #363}
+</style>
+<textarea style="display: none">
+
+# Estimating Efficiency
+
+<table>
+  <tr>
+    <th>input size \( n \)</th>
+    <th>\( n! \)</th>
+    <th>\( 2^n \)</th>
+    <th>\( n^3 \)</th>
+    <th>\( n^2 \)</th>
+    <th>\( n \log_2 n \)</th>
+    <th>\( n \)</th>
+    <th>\( \log_2 n \)</th>
+    <th>\( 1 \)</th>
+  </tr>
+  <tr>
+    <td>\( 10 \)</td>
+    <td class="c2">\( \approx 3.6 \times 10^6 \)</td>
+    <td class="c2">\( 1024 \)</td>
+    <td class="c2">\( 1000 \)</td>
+    <td class="c2">\( 100 \)</td>
+    <td class="c2">\( \approx 33.2 \)</td>
+    <td class="c2">\( 10 \)</td>
+    <td class="c2">\( \approx 3.3 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+  <tr>
+    <td>\( 20 \)</td>
+    <td class="c1">\( \approx 2.4 \times 10^{18} \)</td>
+    <td class="c2">\( \approx 1.0 \times 10^6 \)</td>
+    <td class="c2">\( 8000 \)</td>
+    <td class="c2">\( 400 \)</td>
+    <td class="c2">\( \approx 86.4 \)</td>
+    <td class="c2">\( 20 \)</td>
+    <td class="c2">\( \approx 4.3 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+  <tr>
+    <td>\( 500 \)</td>
+    <td class="c1">\( \approx 1.2 \times 10^{1134} \)</td>
+    <td class="c1">\( \approx 3.3 \times 10^{150} \)</td>
+    <td class="c2">\( 1.25 \times 10^8 \)</td>
+    <td class="c2">\( 250000 \)</td>
+    <td class="c2">\( \approx 4482.9 \)</td>
+    <td class="c2">\( 500 \)</td>
+    <td class="c2">\( \approx 8.97 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+  <tr>
+    <td>\( 5000 \)</td>
+    <td class="c1">\( \approx 4.2 \times 10^{16325} \)</td>
+    <td class="c1">\( \approx 1.4 \times 10^{1505} \)</td>
+    <td class="c1">\( 1.25 \times 10^{11} \)</td>
+    <td class="c2">\( 2.5 \times 10^7 \)</td>
+    <td class="c2">\( \approx 61438.6 \)</td>
+    <td class="c2">\( 5000 \)</td>
+    <td class="c2">\( \approx 12.3 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+  <tr>
+    <td>\( 1\,000\,000 \)</td>
+    <td class="c1">\( \approx 8.2 \times 10^{5565708} \)</td>
+    <td class="c1">\( \approx 9.9 \times 10^{301029} \)</td>
+    <td class="c1">\( 10^{18} \)</td>
+    <td class="c1">\( 10^{12} \)</td>
+    <td class="c2">\( \approx 1.99 \times 10^7 \)</td>
+    <td class="c2">\( 10^6 \)</td>
+    <td class="c2">\( \approx 19.9 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+  <tr>
+    <td>\( 1\,000\,000\,000 \)</td>
+    <td class="c1">\( \approx 9.9 \times 10^{8565705522} \)</td>
+    <td class="c1">\( \approx 4.6 \times 10^{301029995} \)</td>
+    <td class="c1">\( 10^{27} \)</td>
+    <td class="c1">\( 10^{18} \)</td>
+    <td class="c1">\( \approx 2.99 \times 10^{10} \)</td>
+    <td class="c1">\( 10^9 \)</td>
+    <td class="c2">\( \approx 29.9 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+  <tr>
+    <td>\( 10\,000\,000\,000 \)</td>
+    <td class="c1">\( \approx 2.3 \times 10^{95657055186} \)</td>
+    <td class="c1">\( \approx 4.4 \times 10^{3010299956} \)</td>
+    <td class="c1">\( 10^{30} \)</td>
+    <td class="c1">\( 10^{20} \)</td>
+    <td class="c1">\( \approx 3.3 \times 10^{11} \)</td>
+    <td class="c1">\( 10^{10} \)</td>
+    <td class="c2">\( \approx 33.2 \)</td>
+    <td class="c2">\( 1 \)</td>
+  </tr>
+</table>
+
+
+## Rule of Thumb
+
+For input size \( n \) and a time limit of 1 second, expect the time
+complexity of the solution to be at least as good as \( f(n) \) such
+that \( f(n) < 10^9 \). If \( f(n) \ge 10^9 \), then a solution with
+time complexity of \( O(f(n)) \) is likely too bad to pass the tests
+within 1 second.
+
+
+## Example
+
+With \( n = 1\,000\,000 \) and a time limit of 1 second, expect the
+solution to have a time complexity of \( O(n \log n ) \). A solution
+of time complexity of \( O(n^2) \) is likely too bad to complete the
+tests within 1 second.
+
+</textarea>

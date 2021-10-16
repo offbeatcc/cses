@@ -119,7 +119,7 @@
       ;; chapter is found.
       (when (string/= previous-chapter-key chapter-key)
         (setf chapters-html
-              (add-chapter-html chapters-html previous-chapter-key boards-html))
+              (add-book-chapter-html chapters-html previous-chapter-key boards-html))
         (setf boards-html ""))
       ;; Accumulate HTML for the current board into HTML or boards
       ;; HTML of the current chapter.
