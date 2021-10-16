@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Sets: Solution for \( [1 .. n] \)</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Two Sets: Solution for \( [1 \, .. n] \)
+
+When \( n \equiv 0 \pmod{4} \), solve as discussed previously with \(
+k = 1 \) and \( m = n \).
+
+When \( n \equiv 3 \pmod{4} \),
+  * put \( 1 \) and \( 2 \) in the first result set,
+  * put \( 3 \) in the second result set, and
+  * then solve for \( [4 \, .. n] \) as discussed previously with \( k =
+    4 \) and \( m = n - 3 \).
+
+## Illustration for \( n \equiv 3 \pmod{4} \)
+
+```
+            .--------------------------.
+.---.       |   .------------------.   |
+|   |       |   |                  |   |
+1   2   3   4   5   6   7   8   9  10  11
+        |           |   |   |   |
+                    |   `---'   |
+                    `-----------'
+```
+
+</article>
+</textarea>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Sets: Solution for \( [k .. k - m + 1] \) With Alternate Integers</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<section>
+<section>
+
+# Two Sets: Solution for \( [k \, .. k + m - 1] \) With Alternate Integers
+
+## Illustration
+
+```
+ .-----------------------------------------------------------------.
+ |           .-----------------------------------------.           |
+ |           |           .-----------------.           |           |
+ |           |           |                 |           |           |
+ k    k+1   k+2   k+3   k+4   k+5   k+6   k+7   k+8   k+9   k+10  k+11
+       |           |           |     |           |           |
+       |           |           `-----'           |           |
+       |           `-----------------------------'           |
+       `-----------------------------------------------------'
+```
+
+</section>
+<section>
+
+## Solution
+
+For each \( i \) in \( [k \, .. k + m/2) \), print \( i \) and its
+complement as the first set.
+
+For each \( i \) in \( [k + 1 \, .. k + m/2) \), print \( i \) and its
+complement as the second set.
+
+</section>
+</section>
+</textarea>

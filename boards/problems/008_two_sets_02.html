@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Sets: Solution for \( [k .. k - m + 1] \) With Consecutive Integers</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<section>
+<section>
+
+# Two Sets: Solution for \( [k \, .. k + m - 1] \) With Consecutive Integers
+
+## Illustration
+
+```
+ .-----------------------------------------------------------------.
+ |     .-----------------------------------------------------.     |
+ |     |     .-----------------------------------------.     |     |
+ |     |     |                                         |     |     |
+ k    k+1   k+2   k+3   k+4   k+5   k+6   k+7   k+8   k+9   k+10  k+11
+                   |     |     |     |     |     |
+                   |     |     `-----'     |     |
+                   |     `-----------------'     |
+                   `-----------------------------'
+```
+
+Each pair of numbers joined with lines sum to \( k + k + 11 = 2k +
+11\).
+
+The numbers joined with lines at the top can be printed as the first
+set.
+
+The numbers joined with lines at the bottom can be printed as the
+second set.
+
+</section>
+<section>
+
+## Terminology
+
+Consider \( [k \, .. k + m - 1] \) as the input where \( m \equiv 0
+\pmod{4} \).
+
+In each result set we will include a pair of integers as illustrated
+in the previous illustration. The sum of integers in each pair is \( k
++ k + m - 1 = 2k + m - 1 \).
+
+We call the two integers in each pair complements of each other, i.e.,
+for an integer \( i \) belonging to \( [k \, .. k + m - 1] \), we say
+that the complement of \( i \) is \( 2k + m - 1 - i \).
+
+
+## Solution
+
+For each \( i \) in \( [k \, .. k + m/4) \), print \( i \) and its
+complement as the first set.
+
+For each \( i \) in \( [k + m/4 \, .. k + m/2) \), print \( i \) and
+its complement as the second set.
+
+</section>
+</section>
+</textarea>
