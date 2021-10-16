@@ -1,4 +1,4 @@
-// Simple solution using alternate numbers.
+// Simple solution using alternate integers.
 
 #include <iostream>
 
@@ -27,7 +27,7 @@ int main()
         // Print first set.
         std::cout << n / 2 + 1 << "\n";
         std::cout << 1 << ' ' << 2 << ' ';
-        for (int i = 4; i <= 3 + (n  - 3) / 2; i += 2) {
+        for (int i = 4; i <= 3 + (n - 3) / 2; i += 2) {
             std::cout << i << ' ' << n + 4 - i << ' ';
         }
         std::cout << '\n';

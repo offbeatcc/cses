@@ -1,3 +1,6 @@
+// Another solution using alternate integers.
+// This solution reduces code duplication compared to the previous one.
+
 #include <iostream>
 
 int main()
@@ -12,7 +15,7 @@ int main()
 
     std::cout << "YES\n";
     int k = (n % 4) + 1; // n = 1 or n = 4.
-    int m = n % 4 == 0 ? n : n - 3;
+    int m = n - (n % 4);
 
     // Print the first set.
     std::cout << (n - 1) / 2 + 1 << '\n';

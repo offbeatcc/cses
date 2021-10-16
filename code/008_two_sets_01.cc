@@ -1,4 +1,4 @@
-// Simple solution using consecutive numbers.
+// Simple solution using consecutive integers.
 
 #include <iostream>
 
