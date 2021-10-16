@@ -19,7 +19,7 @@
   (cond ((filename-numbered-p filepath)
          (denumber-filename filepath))
         (t
-         (format t "~&ignored ~a~%" filepath))))
+         (format t "~&IGNORING ~a~%" filepath))))
 
 (defun main ()
   (loop for filename in (read-filepaths)

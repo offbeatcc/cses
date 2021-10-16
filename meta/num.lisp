@@ -35,7 +35,7 @@
            (format t "~&renaming ~a -> ~a~%" filepath newpath)
            (rename-file filepath newpath))
           (t
-           (format t "~&ignoring ~a~%" filename)))))
+           (format t "~&IGNORING ~a~%" filepath)))))
 
 (defun main ()
   (let ((slug-number-map (slug-number-map (read-problems))))

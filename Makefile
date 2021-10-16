@@ -24,5 +24,8 @@ num:
 denum:
 	sbcl --script meta/denum.lisp
 
+renum:
+	make denum | grep IGNORING; echo
+	make num | grep IGNORING; echo
 
 FORCE:
