@@ -9,6 +9,9 @@ mod_operator:
 	-javac ModOperator.java && java ModOperator
 	-python3 "$@.py"
 
+billion_loop:
+	c++ -O2 -std=c++11 -Wall -Wextra -pedantic "$@.cc" && time ./a.out
+
 clean:
 	rm -rf *.out *.dSYM input.txt expected.txt output.txt
 
