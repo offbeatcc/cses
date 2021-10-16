@@ -20,9 +20,11 @@ check()
 
 main()
 {
-    F=${1%.*}
-    F=${F%_0*}
-    . test/"${F%.*}.sh"
+    SUFFIX=$(sed -n 's/\/\/ test_suffix=//p' "$1")
+    F=${1%.*}  # Remove .cc
+    F=${F%_0*} # Remove _01, _02, etc.
+    F="$F$SUFFIX.sh" # Append suffix and .sh
+    . test/"$F"
     printf 'done\n'
     unset F
 }
