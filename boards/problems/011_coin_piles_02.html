@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Coin Piles: Necessary Conditions Shown Algebraically</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Coin Piles: Necessary Conditions Shown Algebraically
+
+Let \( a \) and \( b \) be the number of coins in the two piles where
+\( a \le b \). Let both piles become empty after performing:
+
+* \( x \) moves where we remove \( 1 \) coin from the first pile and
+  \( 2 \) coins from the second pile.
+* \( y \) moves where we remove \( 2 \) coins from the first pile and
+  \( 1 \) coin from the second pile.
+
+Therefore we get the following equations:
+
+\begin{align*}
+  a &= x + 2y, \\
+  b &= 2x + y.
+\end{align*}
+
+## First Necessary Condition: \( 3 \mid (a + b) \)
+
+Adding the two equations, we get
+
+\[
+a + b = 3(x + y) \equiv 0 \pmod{3}, \quad \text{ or } \quad 3 \mid (a + b).
+\]
+
+
+## Second Necessary Condition: \( a \ge b/2 \)
+
+Solving the two equations, we get
+
+\begin{align*}
+  x &= \frac{2b - a}{3}, \\
+  y &= \frac{2a - b}{3}.
+\end{align*}
+
+Since \( x \ge 0 \), we get \( b \ge a/2 \).
+
+Since \( y \ge 0 \), we get \( a \ge b/2 \).
+
+</div>
+</article>
+</textarea>

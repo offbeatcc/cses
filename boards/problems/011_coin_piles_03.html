@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Coin Piles: Sufficient Conditions</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+.em1 {border-bottom: thick double orange}
+.em2 {border-bottom: thick double lightgreen}
+.em3 {border-bottom: thick double cyan}
+</style>
+<textarea style="display: none">
+<article>
+
+# Coin Piles: Sufficient Conditions
+
+Let \( a \) and \( b \) be the number of coins in the two piles where
+\( a \le b \), \( 3 \mid (a + b) \), and \( a \ge b/2 \).
+
+We will now show that there exist nonnegative integers \( x \) and \(
+y \) such that both coin piles become empty after performing:
+
+* \( x \) moves where we remove \( 1 \) coin from the first pile and
+  \( 2 \) coins from the second pile.
+* \( y \) moves where we remove \( 2 \) coins from the first pile and
+  \( 1 \) coin from the second pile.
+
+That is, we will show that there exist <span
+class="em1">nonnegative</span> <span class="em2">integers</span> \( x
+\) and \( y \) such that they <span class="em3">satisfy the
+equations</span>:
+
+\begin{align*}
+  a &= x + 2y, \\
+  b &= 2x + y.
+\end{align*}
+
+We will show this by constructing \( x \) and \( y \) as follows:
+
+\[
+  x = \frac{2b - a}{3}, \qquad
+  y = \frac{2a - b}{3}.
+\]
+
+
+## Nonnegativity of \( x \) and \( y \)
+
+Since \( a \le b \), we get \( 2b \ge a \). Thus \( x \ge 0 \).
+
+Since \( a \ge b/2 \), we get \( 2a \ge b \). Thus \( y \ge 0 \).
+
+
+## Integral Values of \( x \) and \( y \)
+
+\begin{align*}
+a + b &\equiv 0 \pmod{3}
+\implies -a \equiv b \pmod{3}
+\implies 2b - a \equiv 3b \equiv 0 \pmod{3}. \\
+a + b &\equiv 0 \pmod{3}
+\implies -b \equiv a \pmod{3}
+\implies 2a - b \equiv 3a \equiv 0 \pmod{3}.
+\end{align*}
+
+## Satisfying The Equations
+
+\begin{align*}
+  x + 2y &= \frac{2b - a}{3} + \frac{4a - 2b}{3} = a, \\
+  2x + y &= \frac{4b - 2a}{3} + \frac{2a - b}{3} = b.
+\end{align*}
+
+</div>
+</article>
+</textarea>
