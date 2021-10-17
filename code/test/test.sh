@@ -8,12 +8,12 @@ check()
     printf '%s\n' "$1" > input.txt
     printf '%s\n' "$2" > expected.txt
     ./a.out < input.txt > output.txt
-    if diff=$(diff -u expected.txt output.txt)
+    if $(diff -u expected.txt output.txt > output.diff)
     then
         printf 'pass\n'
     else
         printf 'fail\n'
-        printf '%s\n' "$diff"
+        cat output.diff
         exit 1
     fi
 }

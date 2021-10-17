@@ -1,2 +1,6 @@
 a.out
 a.out.dSYM
+input.txt
+expected.txt
+output.txt
+output.diff
