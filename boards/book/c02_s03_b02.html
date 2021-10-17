@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Loop Experiments</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  th, td {width: 5em; text-align: right !important}
+  .c1 {background: #633}
+  .c2 {background: #363}
+</style>
+<textarea style="display: none">
+
+# Loop Experiments
+
+## Results
+
+<table>
+  <tr>
+    <th>\( n \)</th>
+    <th>A1</th>
+    <th>A2</th>
+    <th>A3</th>
+    <th>B1</th>
+    <th>B2</th>
+    <th>B3</th>
+    <th>C1</th>
+    <th>C2</th>
+    <th>C3</th>
+  </tr>
+  <tr>
+    <td>\( 10^6 \)</td>
+    <td>6 ms</td>
+    <td>7 ms</td>
+    <td>7 ms</td>
+    <td>6 ms</td>
+    <td>6 ms</td>
+    <td>6 ms</td>
+    <td>10 ms</td>
+    <td>10 ms</td>
+    <td>10 ms</td>
+  </tr>
+  <tr>
+    <td>\( 10^7 \)</td>
+    <td>41 ms</td>
+    <td>42 ms</td>
+    <td>42 ms</td>
+    <td>43 ms</td>
+    <td>44 ms</td>
+    <td>50 ms</td>
+    <td>50 ms</td>
+    <td>50 ms</td>
+    <td>50 ms</td>
+  </tr>
+  <tr>
+    <td>\( 10^8 \)</td>
+    <td>385 ms</td>
+    <td>386 ms</td>
+    <td>387 ms</td>
+    <td>420 ms</td>
+    <td>421 ms</td>
+    <td>423 ms</td>
+    <td>470 ms</td>
+    <td>470 ms</td>
+    <td>470 ms</td>
+  </tr>
+  <tr>
+    <td>\( 10^9 \)</td>
+    <td>3807 ms</td>
+    <td>3813 ms</td>
+    <td>3820 ms</td>
+    <td>4175 ms</td>
+    <td>4202 ms</td>
+    <td>4233 ms</td>
+    <td>TLE</td>
+    <td>TLE</td>
+    <td>TLE</td>
+  </tr>
+</table>
+
+
+## Legend
+
+* \( n \) - Number of iterations of a loop that does <code>r = (r + i) % 101</code>.
+* A1, A2, A3 - Experiments performed on a laptop with 2.2 GHz Quad-Core Intel Core i7 and 16 GB 1600 MHz DDR3 memory. Compiled with clang version 12.0.0 (clang-1200.0.32.27) with options `-O2 -std=c++11 -Wall -Wextra -pedantic`.
+* B1, B2, B3 - Experiments performed on a Linode with 1 CPU Core of AMD EPYC 7601 32-Core Processor and 1 GB (999824 MB) RAM. Compiled with g++ (Debian 10.2.1-6) 10.2.1 20210110 with options `-O2 -std=c++11 -Wall -Wextra -pedantic`.
+* C1, C2, C3 - Experiments performed on CSES. Compiled with g++ 7.5.0 with options `-std=c++11 -O2 -Wall`.
+
+
+## Code
+
+```
+#include <iostream>
+
+int main()
+{
+    int r = 0;
+    for (int i = 0; i < 1000000000; ++i) {
+        r = (r + i) % 101;
+    }
+    std::cout << r << '\n';
+}
+```
+
+</textarea>
