@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Gray Code: Expressing the Reflection Property</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+
+# Gray Code: Expressing the Reflection Property
+
+<section>
+<section>
+
+```
+ n   bin  gray
+--  ----  ----
+ 0   000   000
+ 1   001   001
+ 2   010   011
+ 3   011   010
+ 4   100   110
+ 5   101   111
+ 6   110   101
+ 7   111   100
+```
+
+</section>
+<section>
+
+Let \( g(n, w) \) represent the gray code of \( n \) as a \( w \)-bit
+string. Then
+
+\[
+g(n, w) = \begin{cases}
+\texttt{"0"} + g(n, w - 1) & \text{if } 0 \le n < 2^{w - 1}, \\
+\texttt{"1"} + g(2^w - 1 - n) & \text{if } 2^{w - 1} \le n < 2^w.
+\end{cases}
+\]
+
+</section>
+</section>
+</textarea>
