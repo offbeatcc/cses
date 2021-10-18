@@ -1,0 +1,5 @@
+check 'AAAACACBA' 'AAACBCAAA'
+check 'AAAA' 'AAAA'
+check 'AAB' 'ABA'
+check 'AABB' 'ABBA'
+check 'AABBBCCC' 'NO SOLUTION'
