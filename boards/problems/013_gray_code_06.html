@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Gray Code: Reflected Sequence of Power-Of-Two Repetitions of Two Symbols</title>
+<style>
+  .em1 {border-bottom: medium double orange; padding-bottom: 0.15em}
+  .c0 {color: violet}
+  .c1 {color: #0f0}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+
+# Gray Code: Reflected Sequence of Power-Of-Two Repetitions of Two Symbols
+
+<section>
+<section>
+
+<pre style="display: inline-block; width: 45%">
+<code> k = 4 = 2^2 (r = 2)
+
+ 0  <span class="c0">0</span>000  A    A
+ 1  <span class="c0">0</span>001  A    A
+ 2  <span class="c0">0</span>010  A    A
+ 3  <span class="c0">0</span>011  A    A
+ 4  <span class="c0">0</span>100  B    B
+ 5  <span class="c0">0</span>101  B    B
+ 6  <span class="c0">0</span>110  B    B
+ 7  <span class="c0">0</span>111  B    B
+ 8  <span class="c1">1</span>000  A <span class="c1">-></span> B
+ 9  <span class="c1">1</span>001  A <span class="c1">-></span> B
+10  <span class="c1">1</span>010  A <span class="c1">-></span> B
+11  <span class="c1">1</span>011  A <span class="c1">-></span> B
+12  <span class="c1">1</span>100  B <span class="c1">-></span> A
+13  <span class="c1">1</span>101  B <span class="c1">-></span> A
+14  <span class="c1">1</span>110  B <span class="c1">-></span> A
+15  <span class="c1">1</span>111  B <span class="c1">-></span> A</code>
+</pre>
+
+<pre style="display: inline-block; width: 45%">
+<code> k = 4 = 2^2 (r = 2)
+
+ 0  <span class="c0">0</span>000  0    0
+ 1  <span class="c0">0</span>001  0    0
+ 2  <span class="c0">0</span>010  0    0
+ 3  <span class="c0">0</span>011  0    0
+ 4  <span class="c0">0</span>100  1    1
+ 5  <span class="c0">0</span>101  1    1
+ 6  <span class="c0">0</span>110  1    1
+ 7  <span class="c0">0</span>111  1    1
+ 8  <span class="c1">1</span>000  0 <span class="c1">-></span> 1
+ 9  <span class="c1">1</span>001  0 <span class="c1">-></span> 1
+10  <span class="c1">1</span>010  0 <span class="c1">-></span> 1
+11  <span class="c1">1</span>011  0 <span class="c1">-></span> 1
+12  <span class="c1">1</span>100  1 <span class="c1">-></span> 0
+13  <span class="c1">1</span>101  1 <span class="c1">-></span> 0
+14  <span class="c1">1</span>110  1 <span class="c1">-></span> 0
+15  <span class="c1">1</span>111  1 <span class="c1">-></span> 0</code>
+</pre>
+
+</section>
+<section>
+
+## Reflect Method
+
+Let \( k = 2^r \) where \( r \) is a nonnegative integer. Thus \( k
+\in \{1, 2, 4, 8, \dots \} \).
+
+Consider an alternating sequence of \( 2^r \) repetitions of \( A \) and
+\( 2^{r-1} \) repetitions of \( B \), i.e.,
+\( \underbrace{A, \dots, A}_{2^r \text{ times}},
+   \underbrace{B, \dots, B}_{2^r \text{ times}},
+   \underbrace{A, \dots, A}_{2^r \text{ times}},
+   \underbrace{B, \dots, B}_{2^r \text{ times}},
+   \dots. \)
+
+Number the occurrence of each symbol by its position (0-based) in the
+sequence.
+
+If we pick all positions \( n \) such that <span class="em1">\(
+\lfloor n/2^{r+1} \rfloor \) is odd</span> and flip the symbols at those
+positions, we get a reflected sequence of the symbols, i.e.,
+\( \underbrace{A, \dots, A}_{2^r \text{ times}},
+   \underbrace{B, \dots, B}_{2^r \text{ times}},
+   \underbrace{B, \dots, B}_{2^r \text{ times}},
+   \underbrace{A, \dots, A}_{2^r \text{ times}},
+\dots. \)
+
+Equivalently, if we pick all positions \( n \) such that \( LSB(n >>
+r) = 1 \) and flip the symbols at those positions, we get a reflected
+sequence.
+
+Let \( s_n \) represent the symbol at the \( n \)th position. If the
+symbols are \( 0 \) and \( 1 \) instead, then the
+operation <span class="em1">\( LSB(n >> r) \oplus s_n \)</span> for
+each \( n \) produces the reflected sequence.
+
+</section>
+</section>
+</textarea>

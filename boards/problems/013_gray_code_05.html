@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Gray Code: Reflected Sequence of Repetitions of Two Symbols</title>
+<style>
+  .em1 {border-bottom: medium double orange; padding-bottom: 0.15em}
+  .c0 {color: violet}
+  .c1 {color: #0f0}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+
+# Gray Code: Reflected Sequence of Repetitions of Two Symbols
+
+<section>
+<section>
+
+<pre>
+<code> k = 6
+
+ 0  A -> A
+ 1  A -> A
+ 2  A -> A
+ 3  B -> B
+ 4  B -> B
+ 5  B -> B
+ 6  A <span class="c1">-></span> B
+ 7  A <span class="c1">-></span> B
+ 8  A <span class="c1">-></span> B
+ 9  B <span class="c1">-></span> A
+10  B <span class="c1">-></span> A
+11  B <span class="c1">-></span> A
+12  A -> B
+13  A -> B
+14  A -> B
+15  B -> B
+16  B -> B
+17  B -> B</code>
+</pre>
+
+</section>
+<section>
+
+## Reflect Method
+
+Consider an alternating sequence of \( k \) repetitions of \( A \)
+and \( k \) repetitions of \( B \), i.e.,
+\( \underbrace{A, \dots, A}_{k \text{ times}},
+   \underbrace{B, \dots, B}_{k \text{ times}},
+   \underbrace{A, \dots, A}_{k \text{ times}},
+   \underbrace{B, \dots, B}_{k \text{ times}},
+   \dots. \)
+Number the occurrence of each symbol by its position (0-based) in the
+sequence.
+
+If we pick all positions \( n \) such that <span class="em1">\(
+\lfloor n/2k \rfloor \) is odd</span> and flip the symbols at those
+positions, we get a reflected sequence of the symbols, i.e.,
+\( \underbrace{A, \dots, A}_{k \text{ times}},
+   \underbrace{B, \dots, B}_{k \text{ times}},
+   \underbrace{B, \dots, B}_{k \text{ times}},
+   \underbrace{A, \dots, A}_{k \text{ times}},
+   \dots. \)
+
+This follows directly from the previous board if we denote each group
+of repetitions as \( A' = \underbrace{A, \dots, A}_{k \text{ times}}
+\) and \( B' = \underbrace{B, \dots, B}_{k \text{ times}} \), then
+number the alternating sequence groups, i.e., \(A', B', A', B', \dots
+\), by their positions (0-based), and then note that the \( n \)th
+symbol belongs to the \( \lfloor n / k \rfloor \)th group.
+
+</section>
+</section>
+</textarea>

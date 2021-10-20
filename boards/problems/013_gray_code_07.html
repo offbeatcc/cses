@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Gray Code: XOR Rule for Reflect-And-Prefix Method</title>
+<style>
+  .em1 {border-bottom: medium double orange; padding-bottom: 0.15em}
+  .c0 {color: violet}
+  .c1 {color: #0f0}
+  .c3 {color: #ee0}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+
+# Gray Code: XOR Rule for Reflect-And-Prefix Method
+
+<section>
+<section>
+
+<pre>
+<code> n   bin  gray
+--  ----  ----
+ 0  00<span class="c3">0</span>0  0000
+ 1  00<span class="c3">0</span>1  0001
+ 2  00<span class="c3">1</span>0  0011
+ 3  00<span class="c3">1</span>1  0010
+ 4  01<span class="c3">0</span>0  0110
+ 5  01<span class="c3">0</span>1  0111
+ 6  01<span class="c3">1</span>0  0101
+ 7  01<span class="c3">1</span>1  0100
+ 8  10<span class="c3">0</span>0  1100
+ 9  10<span class="c3">0</span>1  1101
+10  10<span class="c3">1</span>0  1111
+11  10<span class="c3">1</span>1  1110
+12  11<span class="c3">0</span>0  1010
+13  11<span class="c3">0</span>1  1011
+14  11<span class="c3">1</span>0  1001
+15  11<span class="c3">1</span>1  1000</code>
+</pre>
+
+
+</section>
+<section>
+
+## Reflect Method
+
+In the regular binary representation of integers \( 0, 1, 2, \dots \),
+the \( r \)th least significant bit (where \( r \) is 0-based) of all
+the integers form an alternating sequence of \( 2^r \) zeros followed
+by \( 2^r \) ones. These sequences are represented as columns in the
+example on the left side of the board.
+
+For example, the column highlighted in yellow shows the alternating
+sequence for \( r = 1 \).
+
+If we XOR these bits with \( n >> 2^r \), we will obtain a reflected
+sequence. If we do this for every \( r = 0, 1, 2, \dots \), we get a
+reflected sequence of bits in all columns, i.e., a reflected binary
+code, also known as Gray code.
+
+</section>
+</section>
+</textarea>
