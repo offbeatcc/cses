@@ -1,0 +1,61 @@
+sbcl --script meta/chat.lisp
+16:55 traxex: hello world
+16:56 Sam: goodbye world
+16:56 traxex: never used jitsi before but seems to work great
+16:57 _BraveMen: hello
+16:57 Chris: Hi
+16:57 Sam: everyone coming from lobsters?
+16:57 _BraveMen: from lobster
+16:57 Chris: yea
+16:58 traxex: I'm from IRC
+16:59 Sam: i like the noises
+16:59 Trent: whooop whooop whoop
+17:00 _BraveMen: 😄
+17:10 Lorenzo: https://en.wikipedia.org/wiki/Collatz_conjecture
+17:10 Lorenzo: we're guaranteed to reach one for number below 10^a lot
+17:10 Lorenzo: for all numbers below 2.95×10^20, so 10^6 is fine
+17:11 traxex: I'd suggest using assert(1<=n && n<=1e6); instead of a comment
+17:12 Lorenzo: What happens if at some point 3*n+1 overflows at some point? Are we sure it won't for all starting numbers below 10^6?
+17:13 traxex: that's a good point 😃
+17:13 traxex: I think it's the point of this problem on CSES
+17:13 traxex: you need to use 64-bit integers
+17:17 Lorenzo: I think if the string is empty we should return 0, not 1
+17:17 Lorenzo: Oh never mind, sorry
+17:20 traxex: true, but the Constraints say it's not empty
+17:20 traxex: it's important that n is long long
+17:20 traxex: it's not enough for s to be long long here
+17:20 traxex: n*(n+1) depends on the type of n
+17:22 zgrep: Would the compiler optimize the order of multiplication/division to lessen the likelihood of overflow?
+17:23 paul: I don't think it's allowed to
+17:23 vk: No.
+17:24 traxex: if you had "int n", the multiplicatrion would overflow
+17:24 traxex: even though s is long long
+17:24 traxex: yes you could cast
+17:24 delsqx: that would be the same as having it as long long?
+17:24 paul: For that expression, yes
+17:24 Lorenzo: We could use the closed formula for the xor of all numbers from 1 to n, instead of the sum, if we wanted to use int.
+17:25 vik: yes
+17:25 traxex: that's a cute idea
+17:30 cherim: The overflow discussion was even more relevant in "Weird Algorithm". How do you know that your current submission is correct (doesn't overflow 64 bits on n<=1e6 inputs not included in the CSES tests)?
+17:31 traxex: yes, the first chat messages about overflow were about Weird Algorithm
+17:32 cherim: Yes, testing all n<=1e6 "at home" is the best way (and a necessary part of the solution).
+17:32 traxex: has anyone checked what's the smallest n where 64 bits is not enough?
+17:35 delsqx: https://math.stackexchange.com/questions/1121264/collatz-conjecture-largest-number-in-sequence-with-starting-number-n
+17:36 traxex: for 64 bits you could maybe do an exhaustive search
+17:39 cherim: http://www.ericr.nl/wondrous/pathrecs.html
+17:39 traxex: yep that's enough
+17:40 Sam: That was great, thank you 😃
+17:40 fengshaun: Thanks
+17:40 Trent: ty
+17:40 Antriani: Thank you!
+17:41 Nazarii: thank you 👋 see you tomorrow
+17:41 subwoofer: ty
+17:41 Lorenzo: 12327829503
+17:41 RichardParker: Thank you
+17:41 vik: byebye
+17:41 chris: Thanks a lot, realy appreciate your effort
+17:41 sechmo: thanks :3
+17:41 Mohsen: ty 😃
+17:41 zgrep: Thank you!
+17:41 Lorenzo: @trarex I think 12327829503 is the smallest, see
+17:41 Lorenzo: https://oeis.org/A006884/b006884.txt

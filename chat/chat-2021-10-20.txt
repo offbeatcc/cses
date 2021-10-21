@@ -1,0 +1,20 @@
+sbcl --script meta/chat.lisp
+17:02 Nazarii: 👍
+17:02 neozen: 👍
+17:02 Jai Agarwal: 👍
+17:12 cherim: For large n, almost all permutations are valid answers: their fraction is 1-2/n^2 + O(1/n^3).
+17:12 Nazarii: that is interesting analysis, I've just accidentally chose to start with (n-1) like in the first example test case
+17:12 cherim: A later problem
+17:12 cherim: https://cses.fi/problemset/task/1075/
+17:12 cherim: asks for the exact number.
+17:18 Lorenzo: Very interesting cherim, thanks for sharing
+17:18 cherim: There are also solutions that do not insist on even/odd separation. Say, interleaving 1,2,3... and n/2, n/2+1, n/2+2,...
+17:39 Jai Agarwal: Amazing analysis of this problem Susam. Thank you
+17:39 Jai Agarwal: Bye
+17:39 Ant: thank you! bye
+17:39 Yollotl Tamayo: thanks
+17:39 Trent: tyty
+17:39 Siddharth: Thanks! Bye bye!
+17:39 Yollotl Tamayo: bye
+17:39 broop: 👍
+17:39 donthi: 👍
