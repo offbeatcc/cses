@@ -1,0 +1,16 @@
+sbcl --script meta/chat.lisp
+17:00 broop: 👍
+17:05 cherim: Is there any video?
+17:05 Vader: if you mean the screen share, yes I can see it
+17:06 Joe Bh: 👍
+17:07 cherim: OK after rejoin, thanks.
+17:27 paul: Do people still use long long, etc., rather than just int32_t, int64_t, etc., from cstdint?
+17:28 Prateek: __int128
+17:28 Prateek: https://gcc.gnu.org/onlinedocs/gcc/_005f_005fint128.html
+17:28 Prateek: 😃
+17:44 Trent: ty
+17:44 Vader: Thanks! bye 😃
+17:44 dnovmp: thank you
+17:44 Ant: thank you, bye
+17:44 broop: thanks!
+17:44 Joe BH: Thanks!

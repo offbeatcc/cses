@@ -8,7 +8,7 @@ pset:
 	curl -sS https://cses.fi/problemset/ -o /tmp/problemset.html
 	sbcl --script meta/pset.lisp
 
-chat:
+chat: FORCE
 	sbcl --script meta/chat.lisp
 
 boards: FORCE
