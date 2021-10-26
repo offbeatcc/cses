@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Tower of Hanoi: Minimum Number of Moves</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Tower of Hanoi: Minimum Number of Moves
+
+## Reference
+
+Concrete Mathematics, 2nd ed. (Graham, Knuth, Patashnik, 1994).
+
+
+## Definition
+
+Let \( T_n \) be the minimum number of moves required to solve Tower
+of Hanoi with \( n \) discs.
+
+
+## \( 2T_{n - 1} + 1 \) Moves Suffice
+
+We have \( T_0 = 0 \). For \( n > 0 \), we have
+
+\[ T_n \le 2T_{n - 1} + 1 \]
+
+because we first move \( n - 1 \) discs to the spare peg thus
+consuming \( T_{n - 1} \) moves, then we move disc \( n \) to the
+target peg thus consuming \( 1 \) move, and finally we move \( n - 1
+\) discs from the spare peg to the target peg thus consuming another
+\( T_{n - 1} \) moves.
+
+
+## \( 2T_{n - 1} + 1 \) Moves Necessary
+
+At some point we need to move the largest disc (i.e., disc \( n \)) to
+the target peg. At that time the remaining \( n - 1 \) discs must be
+on the spare peg, and it has taken at least \( T_{n - 1} \) moves to
+put them there.
+
+The movement of the largest disc to the target peg consumes \( 1 \)
+move.
+
+Finally, we must move the remaining \( n - 1 \) discs from the spare
+peg to the target peg. This consumes another \( T_{n - 1} \) moves.
+
+Therefore for \( n > 0 \), we get
+
+\[ T_n \ge 2T_{n - 1} + 1 \]
+
+
+## Recurrence Relation
+
+\[
+T_n = \begin{cases}
+  2T_{n-1} + 1 & \text{if } n > 0, \\
+  0 & \text{if } n = 0.
+\end{cases}
+\]
+
+
+## Examples
+
+\begin{align*}
+  T_0 &= 0, \\
+  T_1 &= 1, \\
+  T_2 &= 3, \\
+  T_3 &= 7, \\
+  T_4 &= 15, \\
+  T_5 &= 31, \\
+  &\;\,\vdots \\
+  T_n &= 2^n - 1.
+\end{align*}
+
+
+## Proof by Induction
+
+Since \( T_0 = 2^0 - 1 = 1 - 1 = 0 \), the induction basis holds.
+
+Assume \( T_{n-1} = 2^{n - 1} - 1 \).
+
+Then \( T_n = 2T_{n-1} + 1 = 2(2^{n - 1} - 1) + 1 = 2^n - 2 + 1 = 2^n
+- 1 \).
+
+</article>
+</textarea>

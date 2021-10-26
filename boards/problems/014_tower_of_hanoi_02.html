@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Tower of Hanoi: Illustration of Recursion</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Tower of Hanoi: Illustration of Recursion
+
+## Moving 4 Discs From Peg 1 to Peg 3
+
+<pre style="display: inline-block; width: 23%">
+<code>1
+2
+3
+4
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>   1
+   2
+4  3
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>   1
+   2
+   3  4
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>      1
+      2
+      3
+      4
+-  -  -
+1  2  3</code>
+</pre>
+
+
+## Moving 3 Discs From Peg 1 to Peg 2 (First Recursion)
+
+<pre style="display: inline-block; width: 23%">
+<code>1
+2
+3
+4
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>
+3     1
+4     2
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>      1
+4  3  2
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>
+   1
+   2
+4  3
+-  -  -
+1  2  3</code>
+</pre>
+
+
+## Moving 2 Discs From Peg 1 to Peg 3 (Second Recursion)
+
+<pre style="display: inline-block; width: 23%">
+<code>1
+2
+3
+4
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>2
+3
+4  1
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>3
+4  1  2
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>3     1
+4     2
+-  -  -
+1  2  3</code>
+</pre>
+
+
+## Moving 1 Discs From Peg 1 to Peg 2 (Third Recursion)
+
+<pre style="display: inline-block; width: 23%">
+<code>1
+2
+3
+4
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>1
+2
+3
+4
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>2
+3
+4  1
+-  -  -
+1  2  3</code>
+</pre>
+
+<pre style="display: inline-block; width: 23%">
+<code>2
+3
+4  1
+-  -  -
+1  2  3</code>
+</pre>
+
+Note: In the above illustration we first moved 0 discs from peg 1 to
+peg 3, i.e., we did nothing. Then we moved 1 disc from peg 1 to peg 2.
+Then again we moved 0 discs from peg 3 to peg 2.
+
+Moving 0 discs becomes the base case in our recursion. We do nothing
+in the base case.
+
+</article>
+</textarea>
