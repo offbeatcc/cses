@@ -1,4 +1,5 @@
-sbcl --script meta/chat.lisp
+Book: Pages 1-7: Introduction, Programming languages, Input and output, Working with numbers
+
 17:00 broop: 👍
 17:05 cherim: Is there any video?
 17:05 Vader: if you mean the screen share, yes I can see it

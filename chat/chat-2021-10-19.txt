@@ -1,4 +1,5 @@
-sbcl --script meta/chat.lisp
+Problems: Weird Algorithm, Missing Number, Repetitions, Increasing Array
+
 16:55 traxex: hello world
 16:56 Sam: goodbye world
 16:56 traxex: never used jitsi before but seems to work great

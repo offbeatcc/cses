@@ -1,4 +1,5 @@
-sbcl --script meta/chat.lisp
+Problem: Two Knights
+
 17:02 broop: 👍
 17:02 neozen: 👍
 17:02 traxex: audio ok

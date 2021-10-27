@@ -1,4 +1,5 @@
-sbcl --script meta/chat.lisp
+Problems: Permutations, Number Spiral
+
 17:02 Nazarii: 👍
 17:02 neozen: 👍
 17:02 Jai Agarwal: 👍
