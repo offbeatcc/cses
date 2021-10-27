@@ -1,0 +1,8 @@
+sbcl --script meta/chat.lisp
+17:02 broop: 👍
+17:02 neozen: 👍
+17:02 traxex: audio ok
+17:23 spai: What is the 2 for in the last case?
+17:23 spai: 👍
+17:34 Ant: thank you, bye
+17:34 Jai Agarwal: Thanks!
