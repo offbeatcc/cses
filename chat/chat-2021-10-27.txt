@@ -1,0 +1,6 @@
+Problems: Two Sets, Bit Strings
+
+17:23 Prateek: Another approach that I thought of is, consider the 2 sets as 2 buckets and traverse through the numbers sequentially and put into the bucket which has the smaller sum.
+17:23 Prateek: https://cses.fi/paste/e56ab34cdbd1f7ac2e302e/
+17:31 broop: 👍
+17:31 As: 👍
