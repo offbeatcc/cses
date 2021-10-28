@@ -14,6 +14,7 @@ in the first set is less than or equal to the sum of integers in the
 second set, add \( k \) to the first set; otherwise add \( k \) to the
 second set.
 
+
 ## Illustration for \( n \equiv 0 \pmod{4} \)
 
 <pre>
@@ -21,6 +22,7 @@ second set.
  &darr;    &uarr;   &darr;   &uarr;   &darr;   &uarr;
 11 &rarr; 10   7 &rarr; 6   3 &rarr; 2        (set 2)</code>
 </pre>
+
 
 ## Illustration for \( n \equiv 3 \pmod{4} \)
 
@@ -30,9 +32,10 @@ second set.
 10 &rarr; 9   6 &rarr; 5   2 &rarr; 1         (set 2)</code>
 </pre>
 
+
 ## Outline of Proof of Solution for Any \( n \equiv 0 \pmod{4} \)
 
-We first show that we can obtain a valid solution for \( n \) by
+We first show that we can obtain a valid solution for \( n = 4 \) by
 following the solution algorithm.
 
 ```
@@ -54,7 +57,7 @@ until we reach \( n = 4 \).
 
 ## Outline of Proof of Solution for Any \( n \equiv 3 \pmod{4} \)
 
-We first show that we can obtain a valid solution for \( n \) by
+We first show that we can obtain a valid solution for \( n = 3 \) by
 following the solution algorithm.
 
 ```
