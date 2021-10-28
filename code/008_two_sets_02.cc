@@ -14,7 +14,8 @@ int main()
     }
     
     std::cout << "YES\n";
-    int k = (n % 4) + 1; // n = 1 or n = 4.
+
+    int k = (n % 4) + 1; // k = 1 or k = 4.
     int m = n - (n % 4);
     
     // Print the first set.
