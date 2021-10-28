@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Two Sets: Adding Each Integer to the Set With Smaller Sum</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Two Sets: Adding Each Integer to the Set With Smaller Sum
+
+## Solution Algorithm
+
+For each integer \( k \) in \( [n \, .. 1] \), if the sum of integers
+in the first set is less than or equal to the sum of integers in the
+second set, add \( k \) to the first set; otherwise add \( k \) to the
+second set.
+
+## Illustration for \( n \equiv 0 \pmod{4} \)
+
+<pre>
+<code>12    9 &rarr; 8   5 &rarr; 4   1        (set 1)
+ &darr;    &uarr;   &darr;   &uarr;   &darr;   &uarr;
+11 &rarr; 10   7 &rarr; 6   3 &rarr; 2        (set 2)</code>
+</pre>
+
+## Illustration for \( n \equiv 3 \pmod{4} \)
+
+<pre>
+<code>11   8 &rarr; 7   4 &rarr; 3             (set 1)
+ &darr;   &uarr;   &darr;   &uarr;   &darr;
+10 &rarr; 9   6 &rarr; 5   2 &rarr; 1         (set 2)</code>
+</pre>
+
+## Outline of Proof of Solution for Any \( n \equiv 0 \pmod{4} \)
+
+We first show that we can obtain a valid solution for \( n \) by
+following the solution algorithm.
+
+```
+4 1    (set 1)
+3 2    (set 2)
+```
+
+For \( n \ge 8 \), we add the integers \( n, (n - 1), (n - 2), (n - 3)
+\) into the two sets by following the solution algorithm.
+
+```
+n    n-3    (set 1)
+n-1  n-2    (set 2)
+```
+
+Then we solve the problem for \( n - 4 \). We keep repeating this
+until we reach \( n = 4 \).
+
+
+## Outline of Proof of Solution for Any \( n \equiv 3 \pmod{4} \)
+
+We first show that we can obtain a valid solution for \( n \) by
+following the solution algorithm.
+
+```
+3      (set 1)
+2 1    (set 2)
+```
+
+For \( n \ge 7 \), we add the integers \( n, (n - 1), (n - 2), (n - 3)
+\) into the two sets by following the solution algorithm.
+
+```
+n    n-3    (set 1)
+n-1  n-2    (set 2)
+```
+
+Then we solve the problem for \( n - 4 \). We keep repeating this
+until we reach \( n = 3 \).
+
+</article>
+</textarea>
