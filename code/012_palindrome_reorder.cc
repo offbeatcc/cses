@@ -1,4 +1,4 @@
-// Based on NieDzejkob's solution.
+// Based on a solution by NieDzejkob.
 
 #include <iostream>
 
