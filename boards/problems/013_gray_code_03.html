@@ -13,8 +13,8 @@
 <pre>
 <code> n   bin  gray
 --  ----  ----
- 0  0000  0000
- 1  0001  000<span class="c1">1</span>
+ 0  0000  000<span class="c1">0</span>
+ 1  0001  0001
  2  0010  0011
  3  0011  0<span class="c1">0</span><span class="c2">10</span>
  4  0100  0110
@@ -37,13 +37,13 @@
 ## Recursive Function
 
 Let \( g(n, w) \) represent the gray code of \( n \) as a \( w \)-bit
-string. Let \( g(0, 1) = \texttt{"0"} \). First let us define the
-function \( g \) for \( w = 1 \) as follows:
+string. First let us define the function \( g \) for \( w = 1 \) as
+follows:
 
 \[
 g(n, 1) = \begin{cases}
-\texttt{"0"} \text{if } n = 0, \\
-\texttt{"1"} \text{if } n = 1.
+\texttt{"0"} \text{ if } n = 0, \\
+\texttt{"1"} \text{ if } n = 1.
 \end{cases}
 \]
 

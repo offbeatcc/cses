@@ -65,7 +65,7 @@ Let \( k = 2^r \) where \( r \) is a nonnegative integer. Thus \( k
 \in \{1, 2, 4, 8, \dots \} \).
 
 Consider an alternating sequence of \( 2^r \) repetitions of \( A \) and
-\( 2^{r-1} \) repetitions of \( B \), i.e.,
+\( 2^r \) repetitions of \( B \), i.e.,
 \( \underbrace{A, \dots, A}_{2^r \text{ times}},
    \underbrace{B, \dots, B}_{2^r \text{ times}},
    \underbrace{A, \dots, A}_{2^r \text{ times}},
@@ -85,12 +85,12 @@ positions, we get a reflected sequence of the symbols, i.e.,
 \dots. \)
 
 Equivalently, if we pick all positions \( n \) such that \( LSB(n >>
-r) = 1 \) and flip the symbols at those positions, we get a reflected
+(r+1)) = 1 \) and flip the symbols at those positions, we get a reflected
 sequence.
 
 Let \( s_n \) represent the symbol at the \( n \)th position. If the
 symbols are \( 0 \) and \( 1 \) instead, then the
-operation <span class="em1">\( LSB(n >> r) \oplus s_n \)</span> for
+operation <span class="em1">\( LSB(n >> (r+1)) \oplus s_n \)</span> for
 each \( n \) produces the reflected sequence.
 
 </section>

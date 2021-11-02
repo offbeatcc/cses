@@ -51,10 +51,11 @@ example on the left side of the board.
 For example, the column highlighted in yellow shows the alternating
 sequence for \( r = 1 \).
 
-If we XOR these bits with \( n >> 2^r \), we will obtain a reflected
-sequence. If we do this for every \( r = 0, 1, 2, \dots \), we get a
-reflected sequence of bits in all columns, i.e., a reflected binary
-code, also known as Gray code.
+If we XOR these bits in the column for the \( r \)th least significant
+bits with \( n >> (r+1) \), we will obtain a reflected sequence. If we
+do this for every \( r = 0, 1, 2, \dots \), we get a reflected
+sequence of bits in all columns, i.e., a reflected binary code, also
+known as Gray code.
 
 </section>
 </section>
