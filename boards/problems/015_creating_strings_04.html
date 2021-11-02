@@ -2,11 +2,93 @@
 <html lang="en">
 <title>Creating Strings: Recursive Solution</title>
 <script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>.c1 {color: violet}</style>
 <textarea style="display: none">
-<article>
 
 # Creating Strings: Recursive Solution
 
+<section>
+<section>
 
-</article>
+## Function Description
+
+Let `solve(prefix, s)` be a function that takes a prefix-string named
+`prefix` and another string named `s`, finds all permutations of `s`
+in alphabetical order, and prints each permutation prefixed by
+`prefix`.
+
+For example `solve("abc", "efd")` prints the following:
+
+<pre>
+<code>abc<span class="c1">def</span>
+abc<span class="c1">dfe</span>
+abc<span class="c1">edf</span>
+abc<span class="c1">efd</span>
+abc<span class="c1">fde</span>
+abc<span class="c1">fed</span></code>
+</pre>
+
+As another example, note that `solve("abc", "ede")` prints the following:
+
+<pre>
+<code>abc<span class="c1">dee</span>
+abc<span class="c1">ede</span>
+abc<span class="c1">eed</span></code>
+</pre>
+
+</section>
+<section>
+
+## Function Definition
+
+* If `s` is a nonempty string, we have work to do.
+  * Sort all letters of `s` in alphabetical order.
+  * For each distinct letter `c` in `s`:
+    * Append `c` to `prefix`.
+    * Recursively solve for the new `prefix` and `s` with `c` removed from it.
+* If `s` is an empty string, we have the base case.
+  * Print `prefix` followed by a newline.
+
+## Illustration
+
+```
+solve("", "abac")
+    solve("a", "abc")
+        solve("aa", "bc")
+            solve("aab", "c")
+                solve("aabc", "") --> "aabc"
+            solve("aac", "b")
+                solve("aacb", "") --> "aacb"
+        solve("ab", "ac")
+            solve("aba", "c")
+                solve("abac", "") --> "abac"
+            solve("abc", "a")
+                solve("abca", "") --> "abca"
+        solve("ac", "ab")
+            solve("aca", "b")
+                solve("acab", "") --> "acab"
+            solve("acb", "a")
+                solve("acba", "") --> "acba"
+    solve("b", "aac")
+        solve("ba", "ac")
+            solve("baa", "c")
+                solve("baac", "") --> "baac"
+            solve("bac", "a")
+                solve("baca", "") --> "baca"
+        solve("bc", "aa")
+            solve("bca", "a")
+                solve("bcaa", "") --> "bcaa"
+    solve("c", "aab")
+        solve("ca", "ab")
+            solve("caa", "b")
+                solve("caab", "") --> "caab"
+            solve("cab", "a")
+                solve("caba", "") --> "caba"
+        solve("cb", "aa")
+            solve("cba", "a")
+                solve("cbaa", "") --> "cbaa"
+```
+
+</section>
+</section>
 </textarea>
