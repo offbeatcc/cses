@@ -27,23 +27,41 @@ long long factorial(int n) {
     return n * factorial(n - 1);
 }
 
-void solve(std::string prefix, std::string s)
-{
-    if (s == "") {
-        std::cout << prefix << '\n';
-        return;
+void swap(char* p, char* q) {
+    char temp;
+    temp = *p;
+    *p = *q;
+    *q = temp;
+}
+
+bool next_permutation(std::string& s) {
+    // Find the largest i such that s[i] < s[i + 1].
+    int i = s.size() - 2;
+    while (i >= 0 && s[i] >= s[i + 1]) {
+        --i;
     }
 
-    sort(s);
-
-    // For each distinct letter in s, move the letter from s to
-    // prefix, and find permutations for the remaining s.
-    solve(prefix + s[0], s.substr(1));
-    for (size_t i = 1; i < s.size(); ++i) {
-        if (s[i - 1] != s[i]) {
-            solve(prefix + s[i], s.substr(0, i) + s.substr(i + 1));
-        }
+    // If all characters are in descending order, this is the last
+    // permutation.
+    if (i == -1) {
+        return false;
     }
+
+    // Find the largest j such that s[j] > s[i].
+    int j = s.size() - 1;
+    while (j >= 0 && s[j] <= s[i]) {
+        --j;
+    }
+
+    // Replace s[i] with s[j] by swapping them.
+    swap(&s[i], &s[j]);
+
+    // Reverse characters from s[i + 1] to end of string.
+    for (int l = i + 1, r = s.size() - 1; l <= r; ++l, --r) {
+        swap(&s[l], &s[r]);
+    }
+
+    return true;
 }
 
 int main()
@@ -64,7 +82,9 @@ int main()
         }
     }
     permutations /= factorial(k);
-
     std::cout << permutations << '\n';
-    solve("", s);
+
+    do {
+        std::cout << s << '\n';
+    } while (next_permutation(s));
 }

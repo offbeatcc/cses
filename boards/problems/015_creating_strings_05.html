@@ -1,26 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Creating Strings: Representing String With Frequency Count</title>
+<title>Creating Strings: Algorithm for Next Permutation</title>
 <script src="https://cdn.jsdelivr.net/npm/muboard"></script>
-<style>.c1 {color: violet}</style>
+<style>.c1 {color: violet} .c2 {color: lightgreen}</style>
 <textarea style="display: none">
-<article>
 
-# Creating Strings: Representing String With Frequency Count
+# Creating Strings: Algorithm for Next Permutation
 
-Consider a string `"aabac"`. The frequency count of letters can be
-represented as:
+<section>
+<section>
 
-```
-a: 3
-b: 1
-c: 1
-```
+## Example
+  
+<pre>
+abc<span class="c1">d</span><span class="c2">e</span>
+abc<span class="c1">e</span><span class="c2">d</span>
+abdce
+abdec
+abecd
+a<span class="c1">b</span><span class="c2">edc</span>    (Replace 'b' with 'c'.)
+a<span class="c1">c</span><span class="c2">bde</span>    (Then sort all characters after 'c'.)
+acbed
+acdbe
+acdeb
+acebd
+a<span class="c1">c</span><span class="c2">edb</span>    (Replace 'c' with 'd'.)
+a<span class="c1">d</span><span class="c2">bce</span>    (Then sort all characters after 'd'.)
+adbec
+adcbe
+adceb
+adebc
+adecb
+aebcd
+aebdc
+aecbd
+aecdb
+aedbc
+aedcb
+bacde
+baced
+badce
+badec
+baecd
+baedc
+bcade
+bcaed
+bcdae
+bcdea
+bcead
+bceda
+bdace
+bdaec
+bdcae
+bdcea
+bdeac
+bdeca
+beacd
+beadc
+becad
+becda
+bedac
+bedca
+cabde
+cabed
+cadbe
+cadeb
+caebd
+caedb
+cbade
+cbaed
+cbdae
+cbdea
+cbead
+cbeda
+cdabe
+cdaeb
+cdbae
+cdbea
+cdeab
+cdeba
+ceabd
+ceadb
+cebad
+cebda
+cedab
+cedba
+dabce
+dabec
+dacbe
+daceb
+daebc
+daecb
+dbace
+dbaec
+dbcae
+dbcea
+dbeac
+dbeca
+dcabe
+dcaeb
+dcbae
+dcbea
+dceab
+dceba
+deabc
+deacb
+debac
+debca
+decab
+decba
+eabcd
+eabdc
+eacbd
+eacdb
+eadbc
+eadcb
+ebacd
+ebadc
+ebcad
+ebcda
+ebdac
+ebdca
+ecabd
+ecadb
+ecbad
+ecbda
+ecdab
+ecdba
+edabc
+edacb
+edbac
+edbca
+edcab
+edcba
+</pre>
 
-This frequency count can be used to easily reconstruct the string with
-the letters arranged in alphabetical order, i.e.,
+</section>
+<section>
 
-`"aaabc"`
+## Algorithm
 
-</article>
+* A sequence that is already reverse sorted has no next permutation.
+* Scan the sequence from right to left to find the first element that
+violates reverse sorting. Call it the *bad element*. Call other
+elements to its right as *good elements*. Call the cells they are in
+as bad and good places, respectively.
+* Find the smallest good element larger than the bad element. Call
+it the replacement element.
+* Replace the bad element with the replacement element by swapping
+them.
+* Sort the elements in the good places.
+
+## Equivalent Algorithm
+
+* Find the largest `i` such that `s[i] < s[i + 1]`.
+* If no such `i`, there is no next permutation.
+* Find the largest `j` such that `s[j] > s[i]`.
+* Swap `s[i]` and `s[j]`.
+* Reverse the subsequence `s[i + 1]` to `s[length - 1]`.
+
+</section>
+</section>
 </textarea>
