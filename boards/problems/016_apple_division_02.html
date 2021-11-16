@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Apple Division: Recursive Solution</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+
+# Apple Division: Recursive Solution
+
+<section>
+<section>
+
+## Example
+
+### Input
+
+```
+4
+5 9 3 4
+```
+
+### Checking All \( 2^4 \) Possible Divisions
+
+```
++5 (-5)
+    +9 (-14)
+        +3 (-17)
+            +4 (-21)
+            -4 (-13)
+        -3 (-11)
+            +4 (-15)
+            -4 (-7)
+    -9 (4)
+        +3 (1)
+            +4 (-3)
+            -4 (5)
+        -3 (7)
+            +4 (3)
+            -4 (11)
+-5 (5)
+    +9 (-4)
+        +3 (-7)
+            +4 (-11)
+            -4 (-3)
+        -3 (-1)
+            +4 (-5)
+            -4 (3)
+    -9 (14)
+        +3 (11)
+            +4 (7)
+            -4 (15)
+        -3 (17)
+            +4 (13)
+            -4 (21)
+```
+
+</section>
+<section>
+
+## Legend
+
+* In the chart on the left, each level of indentation represents
+recursion depth.
+
+* The first number in each row represents the choice (whether to add
+or subtract) made for each element.
+
+* The second parenthesized number represents the current `diff`
+computed as a result of all the choices made in the current call and
+preceding calls.
+
+## Algorithm
+
+* The solution function call itself recursively.
+
+* In each call it receives the entire sequence of numbers, the index
+of the element in the sequence that we need to work on, and the `diff`
+computed so far for the previous elements. We call the indexed element
+as the current element.
+
+* There are two possible choices to be made now for the
+current element:
+  * Add the current element to the `diff`.
+  * Subtract the current element from the `diff`.
+
+* For each choice, call the solution function recursively with an
+updated `diff` and the index incremented by 1.
+
+</section>
+</section>
+</textarea>

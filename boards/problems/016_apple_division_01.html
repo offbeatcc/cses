@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Apple Division: Considering All Possible Divisions</title>
+<title>Apple Division: Iterative Solution</title>
 <script src="https://cdn.jsdelivr.net/npm/muboard"></script>
-<style>.c1 {color: violet} .c2 {color: lightgreen}</style>
 <textarea style="display: none">
 
-# Apple Division: Considering All Possible Divisions
+# Apple Division: Iterative Solution
 
 <section>
 <section>
@@ -22,7 +21,7 @@
 ### Checking All \( 2^4 \) Possible Divisions
 
 ```
- k   bin         grouping  diff
+ m   bin         grouping  diff
 --  ----  ---------------  ----
  0  0000  - 4 - 3 - 9 - 5   -21
  1  0001  - 4 - 3 - 9 + 5   -11
@@ -50,7 +49,7 @@
 * In the table on the left, if a number is prefixed with a plus sign,
 it belongs to the first group. Otherwise, it belongs to the second group.
 
-* The *diff* column represents the difference \( s_1 - s_2 \) where \(
+* The `diff` column represents the difference \( s_1 - s_2 \) where \(
 s_1 \) is the sum of numbers in the first group and \( s_2 \) is the
 sum of the numbers in the second group.
 

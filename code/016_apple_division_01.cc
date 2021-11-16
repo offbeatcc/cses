@@ -1,8 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <functional>
-#include <cmath>
 #include <limits>
 
 int main()
@@ -17,15 +14,15 @@ int main()
 
     long long min_diff = std::numeric_limits<long long>::max();
 
-    // Each c represents an n-bit string from 000...000 to 111...111.
-    for (int c = 0; c < (1 << n); ++c) {
+    // Each m represents an n-bit string from 000...000 to 111...111.
+    for (int m = 0; c < (1 << n); ++m) {
         long long diff = 0; // 1st group sum - 2nd group sum.
         for (int i = 0; i < n; ++i) {
-            if (c & (1 << i)) {
-                // If bit c_i = 1, p[i] belongs to the 1st group.
+            if (m & (1 << i)) {
+                // If bit k_i = 1, p[i] belongs to the 1st group.
                 diff += p[i];
             } else {
-                // If bit c_i = 0, p[i] belongs to the 2nd group.
+                // If bit k_i = 0, p[i] belongs to the 2nd group.
                 diff -= p[i];
             }
         }
