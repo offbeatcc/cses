@@ -4,4 +4,4 @@ Problems: Palindrome Reorder, Gray Code
 17:00 spai: 👍
 17:26 Prateek: an iterative solution
 17:26 Prateek: https://cses.fi/paste/87ff7eecbd7e3a622ee841/
-17:45 susam says:: https://offbeat.cc/cses/boards/ - Link to boards
+17:45 susam: https://offbeat.cc/cses/boards/ - Link to boards
