@@ -1,0 +1,5 @@
+Problem: Tower of Hanoi
+
+17:24 cherim: The previous CSES problem was "Gray code". Hanoi towers are actually isomorphic to Gray code.
+17:24 cherim: "Move n-1 disks -> move last disk -> move n-1 disks again" maps to "traverse n-1 bit Gray code -> flip last bit -> traverse n-1 bit Gray code again".
+17:36 Jai: Thanks!
