@@ -1,0 +1,8 @@
+Book: Pages 13-16: Logic, Functions, Logarithms, Contests
+
+17:38 traxex: audio is fine
+17:38 traxex: https://en.wiktionary.org/wiki/ln
+17:38 traxex: Probably from New Latin logarithmus naturalis (“natural logarithm”).
+17:38 traxex: codeforces added a third division with even easier problem recently, it's suitable for complete beginners
+17:38 traxex: CLRS has a solid definition of big-O in the beginning too
+17:38 traxex: bye 😃
