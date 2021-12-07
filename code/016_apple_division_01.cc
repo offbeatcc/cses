@@ -15,7 +15,7 @@ int main()
     long long min_diff = std::numeric_limits<long long>::max();
 
     // Each m represents an n-bit string from 000...000 to 111...111.
-    for (int m = 0; c < (1 << n); ++m) {
+    for (int m = 0; m < (1 << n); ++m) {
         long long diff = 0; // 1st group sum - 2nd group sum.
         for (int i = 0; i < n; ++i) {
             if (m & (1 << i)) {

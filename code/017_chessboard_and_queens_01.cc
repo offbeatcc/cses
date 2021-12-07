@@ -29,7 +29,7 @@ bool check(bool (&board)[8][8], int row, int col)
 }
 
 // Solve the 8-queens problem recursively.
-void solve(char (&input)[8][8], bool (&board)[8][8], int col, int &result)
+void solve(char (&input)[8][8], bool (&board)[8][8], int col, int& result)
 {
     // If all queens were placed successfully on columns 0 to 7, we
     // have a successful placement to be counted.
