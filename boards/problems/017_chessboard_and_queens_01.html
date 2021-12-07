@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Chessboard and Queens</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<style>
+  td {
+    width: 2em;
+    height: 2em;
+    text-align: center !important;
+  }
+  td.invisible {
+    border: none;
+  }
+</style>
+<textarea style="display: none">
+
+# Chessboard and Queens: Naming and Numbering Diagonals
+
+<section>
+<section>
+
+## Falling Diagonals
+
+<table>
+  <tr>
+    <td class="invisible"></td>
+    <td class="invisible">0</td>
+    <td class="invisible">1</td>
+    <td class="invisible">2</td>
+    <td class="invisible">3</td>
+    <td class="invisible">4</td>
+    <td class="invisible">5</td>
+    <td class="invisible">6</td>
+    <td class="invisible">7</td>
+  </tr>
+  <tr>
+    <td class="invisible">0</td>
+    <td>7</td>
+    <td>6</td>
+    <td>5</td>
+    <td>4</td>
+    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td class="invisible">1</td>
+    <td>8</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+  <tr>
+    <td class="invisible">2</td>
+    <td>9</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+  <tr>
+    <td class="invisible">3</td>
+    <td>10</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+  <tr>
+    <td class="invisible">4</td>
+    <td>11</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+  <tr>
+    <td class="invisible">5</td>
+    <td>12</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+  <tr>
+    <td class="invisible">6</td>
+    <td>13</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+  <tr>
+    <td class="invisible">7</td>
+    <td>14</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+    <td>⟍</td>
+  </tr>
+</table>
+
+### Falling Diagonal Number
+
+In an \( m \times n \) board, cell \( (r, c) \) belongs to diagonal
+numbered
+
+\[
+d = r - c + (n - 1)
+\]
+
+Examples:
+
+In an \( 8 \times 8 \) board, cell \( (r, c) \) belongs to diagonal
+numbered
+
+\[
+d = r - c + 7.
+\]
+
+The cell \( (3, 2) \) belongs to diagonal \( 3 - 2 + 7 = 8 \).
+
+</section>
+<section>
+
+## Rising Diagonals
+
+<table>
+  <tr>
+    <td class="invisible"></td>
+    <td class="invisible">0</td>
+    <td class="invisible">1</td>
+    <td class="invisible">2</td>
+    <td class="invisible">3</td>
+    <td class="invisible">4</td>
+    <td class="invisible">5</td>
+    <td class="invisible">6</td>
+    <td class="invisible">7</td>
+  </tr>
+  <tr>
+    <td class="invisible">0</td>
+    <td>0</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td class="invisible">1</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td class="invisible">2</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td class="invisible">3</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td class="invisible">4</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td class="invisible">5</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td class="invisible">6</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td class="invisible">7</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>⟋</td>
+    <td>14</td>
+  </tr>
+</table>
+
+### Rising Diagonal Number
+
+In an \( m \times n \) board, cell \( (r, c) \) belongs to diagonal
+numbered
+
+\[
+d = r + c.
+\]
+
+Examples:
+
+In an \( 8 \times 8 \) board, cell \( (r, c) \) belongs to diagonal
+numbered
+
+\[
+d = r + c.
+\]
+
+The cell \( (3, 2) \) belongs to diagonal \( 3 + 2 = 5 \).
+
+</section>
+</section>
+</textarea>

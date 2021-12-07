@@ -4,11 +4,11 @@ set -e
 
 check()
 {
-    printf '%s ... ' $(printf '%s' "$1" | head -n 1)
+    printf '%s ... ' "$(printf '%s' "$1" | head -n 1)"
     printf '%s\n' "$1" > input.txt
     printf '%s\n' "$2" > expected.txt
     ./a.out < input.txt > output.txt
-    printf '=> %s ... ' $(head -n 1 output.txt)
+    printf '=> %s ... ' "$(head -n 1 output.txt)"
     if $(diff -u expected.txt output.txt > error.diff)
     then
         printf 'pass\n'
