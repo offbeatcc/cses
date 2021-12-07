@@ -1,0 +1,5 @@
+Problem: Apple Division, Chessboard and Queens
+
+17:02 broop: 👍
+17:44 traxex: N-queens can also be described in terms of permutations: count N-permutations where |i-j| != |p[i]-p[j]| for all i<j. Using std::next_permutation makes it quite short
+17:44 traxex: https://cses.fi/paste/6a891f23caed2f0e30fca3/
