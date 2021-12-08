@@ -1,0 +1,3 @@
+Problem: Chessboard and Queens; Book: Page 21
+
+17:37 Prateek: Probably not very relevant, but clang with -O3 can produce some (really good) optimizations with branch predictions given that the modulo is constant to 101 😃
