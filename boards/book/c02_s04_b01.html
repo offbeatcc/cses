@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Maximum Subarray Sum: Illustration of Algorithm 3</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Maximum Subarray Sum: Illustration of Algorithm 3
+
+## Max-Sum Subarray Ending at Position \( k \)
+
+Let \( k = 1 \).
+
+\[ a = (-1, \underset{\text{sum = 2}}{\underset{\Uparrow}{2,}} 4, -3, 5, 2, -5, 2) \]
+
+Let \( k = 2. \)
+
+\[ a = (-1, \underbrace{2, 4}_{\text{sum} = 6}, -3, 5, 2, -5, 2) \]
+
+Let \( k = 3. \)
+
+\[ a = (-1, \underbrace{2, 4, -3}_{\text{sum} = 3}, 5, 2, -5, 2) \]
+
+
+Let \( k = 4. \)
+
+\[ a = (-1, \underbrace{2, 4, -3, 5}_{\text{sum} = 8}, 2, -5, 2) \]
+
+
+Let \( k = 5. \)
+
+\[ a = (-1, \underbrace{2, 4, -3, 5, 2}_{\text{sum} = 10}, -5, 2) \]
+
+
+Let \( k = 6. \)
+
+\[ a = (-1, \underbrace{2, 4, -3, 5, 2, -5}_{\text{sum} = 5}, 2) \]
+
+
+Let \( k = 7. \)
+
+\[ a = (-1, \underbrace{2, 4, -3, 5, 2, -5, 2}_{\text{sum} = 7}) \]
+
+
+
+## Algorithm Illustration
+
+```
+a[8]: -1,  2,  4, -3,  5,  2, -5,  2
+sum:  -1,  2,  6,  3,  8, 10,  5,  7
+
+best:  0,  2,  6,  6,  8, 10, 10, 10
+```
+
+Note: \( \text{sum} = \max(a[k], \text{sum} + a[k]). \)
+
+
+</article>
+</textarea>
