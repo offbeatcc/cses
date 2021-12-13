@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Digit Queries: Finding \( k \)th Digit</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Digit Queries: Finding \( k \)th Digit
+
+
+## Illustration With \( k = 197 \)
+
+\[
+\overbrace{\underset{\substack{\uparrow \\ \\ \\ 1}}{1}, 2, \dots, 8,
+           \underset{\substack{\uparrow \\ \\ \\ 9 \\ \\ \\ (a_1)}}9}^
+          {1 \times 9 = 9 \text{ digits}},
+\overbrace{10, 11, \dots, 98,
+           9\hspace{-5px}{\underset{\substack{\uparrow \\ \\ \\ 189 \\ \\ \\ (a_2)}}{9}}\hspace{-5px}}^
+          {2 \times 90 = 180 \text{ digits}},
+\overbrace{100, 101, 1\hspace{-5px}\underset{\substack{\uparrow \\ \\ \\ 197 \\ \\ \\ (k)}}{0}\hspace{-5px}2, \dots, 998,
+           99\hspace{-8px}\underset{\substack{\uparrow \\ \\ \\ 2889 \\ \\ \\ (a_3)}}{9}\hspace{-8px}}^
+          {3 \times 900 = 2700 \text{ digits}},
+1000, 1001, \dots
+\]
+
+- The largest \( a_i \) less than \( k = 197 \) is \( a_2 = 189 \).
+- Let \( n = i + 1 = 3 \). The \( k \)th digit belongs to an integer
+  with \( n = 3 \) digits.
+- The distance of the \( k \)th place from the \( a_2 \)th place is
+  \[ k - a_2 = 197 - 189 = 8. \]
+- Therefore the number of full integers between the \( a_2 \)th place
+  (exclusive) and the \( k \)th place (inclusive) is
+  \[ \lfloor (k - a_2) / n \rfloor = \lfloor 8 / 3 \rfloor = 2. \]
+- The largest "full" integer on or before the \( k \)th place is
+  \[ 99 + \lfloor (k - a_2) / n \rfloor = 99 + 2 = 101. \]
+- The distance between the end of \( 101 \) and the \( k \)th digit is
+  \[ (k - a_2) \bmod n = 8 \bmod 3 = 2, \] so the \( k \)th place is
+  the \( 2 \)nd digit of \( 102 \). Thus the answer is \( 0 \).
+
+
+## Illustration With \( k = 195 \)
+
+\[
+\overbrace{\underset{\substack{\uparrow \\ \\ \\ 1}}{1}, 2, \dots, 8,
+           \underset{\substack{\uparrow \\ \\ \\ 9 \\ \\ \\ (a_1)}}9}^
+          {1 \times 9 = 9 \text{ digits}},
+\overbrace{10, 11, \dots, 98,
+           9\hspace{-5px}{\underset{\substack{\uparrow \\ \\ \\ 189 \\ \\ \\ (a_2)}}{9}}\hspace{-5px}}^
+          {2 \times 90 = 180 \text{ digits}},
+\overbrace{100, 10\hspace{-5px}\underset{\substack{\uparrow \\ \\ \\ 195 \\ \\ \\ (k)}}{1}\hspace{-5px}, 102, \dots, 998,
+           99\hspace{-8px}\underset{\substack{\uparrow \\ \\ \\ 2889 \\ \\ \\ (a_3)}}{9}\hspace{-8px}}^
+          {3 \times 900 = 2700 \text{ digits}},
+1000, 1001, \dots
+\]
+
+- The largest \( a_i \) less than \( k = 195 \) is \( a_2 = 189 \).
+- Let \( n = i + 1 = 3 \). The \( k \)th digit belongs to an integer
+  with \( n = 3 \) digits.
+- The distance of the \( k \)th place from the \( a_2 \)th place is
+  \[ k - a_2 = 195 - 189 = 6. \]
+- Therefore the number of full integers between the \( a_2 \)th place
+  (exclusive) and the \( k \)th place (inclusive) is
+  \[ \lfloor (k - a_2) / n \rfloor = \lfloor 6 / 3 \rfloor = 2. \]
+- The largest "full" integer on or before the \( k \)th place is
+  \[ 99 + \lfloor (k - a_2) / n \rfloor = 99 + 2 = 101. \]
+- The distance between the end of \( 101 \) and the \( k \)th digit is
+  \[ (k - a_2) \bmod n = 6 \bmod 3 = 0, \] so the \( k \)th digit is
+  the same as the last digit of \( 101 \). Thus the answer is \( 1 \).
+
+
+## Illustration With \( k = 189 \)
+
+\[
+\overbrace{\underset{\substack{\uparrow \\ \\ \\ 1}}{1}, 2, \dots, 8,
+           \underset{\substack{\uparrow \\ \\ \\ 9 \\ \\ \\ (a_1)}}9}^
+          {1 \times 9 = 9 \text{ digits}},
+\overbrace{10, 11, \dots, 98,
+           9\hspace{-5px}{\underset{\substack{\uparrow \\ \\ \\ 189 \\ \\ \\ (a_2) \\ \\ \\ (k)}}{9}}\hspace{-5px}}^
+          {2 \times 90 = 180 \text{ digits}},
+\overbrace{100, 101, 102, \dots, 998,
+           99\hspace{-8px}\underset{\substack{\uparrow \\ \\ \\ 2889 \\ \\ \\ (a_3)}}{9}\hspace{-8px}}^
+          {3 \times 900 = 2700 \text{ digits}},
+1000, 1001, \dots
+\]
+
+- The largest \( a_i \) less than \( k = 189 \) is \( a_1 = 9 \).
+- Let \( n = i + 1 = 2 \). The \( k \)th digit belongs to an integer
+  with \( n = 2 \) digits.
+- The distance of the \( k \)th place from the \( a_1 \)th place is
+  \[ k - a_1 = 189 - 9 = 180. \]
+- Therefore the number of full integers between the \( a_1 \)th place
+  (exclusive) and the \( k \)th place (inclusive) is
+  \[ \lfloor (k - a_1) / n \rfloor = \lfloor 180 / 2 \rfloor = 90. \]
+- The largest "full" integer on or before the \( k \)th place is
+  \[ 9 + \lfloor (k - a_1) / n \rfloor = 9 + 90 = 99. \]
+- The distance between the end of \( 99 \) and the \( k \)th digit is
+  \[ (k - a_2) \bmod n = 180 \bmod 2 = 0, \] so the \( k \)th digit is
+  the same as the last digit of \( 99 \). Thus the answer is \( 9 \).
+
+
+## General Solution
+
+- Find the largest \( a_i \) less than \( k \).
+- Let \( n = i + 1 \) where \( i \) is the subscript of the largest \(
+  a_i \) found less than \( k \) in the previous step. Now we know
+  that the \( k \)th digit belongs to an integer with \( n \) digits.
+- Compute the largest "full" integer on or before the \( k \)th place
+  as follows:
+  \[ p = (10^{n-1} - 1) + \left\lfloor \frac{k - a_{n-1}}{n} \right\rfloor. \]
+- Compute the distance between the last digit of \( p \) and the \( k
+  \)th digit as follows:
+  \[ r = (k - a_{n-1}) \bmod n. \]
+- If \( r = 0 \), then the solution is the last digit of \( p \).
+  Otherwise the solution is the \( r \)th digit of \( p + 1 \).
+
+
+## Finding the Last Digit of an Integer
+
+The last digit of a positive integer \( x \) is
+\[ x \bmod 10. \]
+
+Example: The last digit of \( 56789 \) is
+\[ 56789 \bmod 10 = 9. \]
+
+
+## Finding the \( r \)th Digit of an Integer
+
+The \( r \)th digit of an \( n \)-digit positive integer \( x \) is
+\[ \left\lfloor \frac{x}{10^{n - r}} \right\rfloor \bmod 10. \]
+
+Example: The \( 2 \)nd digit of \( 56789 \) is
+\[ \left\lfloor \frac{56789}{10^3} \right\rfloor \bmod 10 = 56 \bmod 10 = 6. \]
+
+</article>
+</textarea>

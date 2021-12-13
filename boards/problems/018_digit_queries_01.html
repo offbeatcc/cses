@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Digit Queries: Recurrence Relation and Closed-Form Expression</title>
+<script src="https://cdn.jsdelivr.net/npm/muboard"></script>
+<textarea style="display: none">
+<article>
+
+# Digit Queries: Recurrence Relation and Closed-Form Expression
+
+
+## Illustration of Digits Consumed
+
+\[
+\overbrace{\underset{\substack{\uparrow \\ \\ \\ 1}}{1}, 2, \dots, 8,
+           \underset{\substack{\uparrow \\ \\ \\ 9}}9}^
+          {1 \times 9 = 9 \text{ digits}},
+\overbrace{10, 11, \dots, 98,
+           9\hspace{-5px}{\underset{\substack{\uparrow \\ \\ \\ 189}}{9}}\hspace{-5px}}^
+          {2 \times 90 = 180 \text{ digits}},
+\overbrace{100, 101, \dots, 998,
+           99\hspace{-8px}\underset{\substack{\uparrow \\ \\ \\ 2889}}{9}\hspace{-8px}}^
+          {3 \times 900 = 2700 \text{ digits}},
+1000, 1001, \dots
+\]
+
+
+## Recurrence Relation
+
+Let \( a_n \) denote the number of digits in \( 1, 2, \dots, 10^n - 1 \).
+
+\begin{align*}
+a_0 &= 0, \\
+a_n &= a_{n-1} + 9n \cdot 10^{n-1}.
+\end{align*}
+
+Expanding the recurrence relation we get,
+
+\begin{align*}
+a_0 &= 0, \\
+a_1 &= 9, \\
+a_2 &= 9 + 2 \cdot 90, \\
+a_3 &= 9 + 2 \cdot 90 + 3 \cdot 900, \\
+&\;\,\vdots \\
+a_n &= 9 + 2 \cdot 90 + 3 \cdot 900 + \dots + n \cdot 9 \cdot 10^{n - 1}.
+\end{align*}
+
+
+## Closed-Form Expression
+
+\begin{align*}
+a_n &= 9\left( 1 + 2 \cdot 10 + 3 \cdot 100 + \dots + \phantom{(0 + {})} n 10^{n-1} \phantom{{} + n10^n} \right) \\
+10a_n &= 9 \left( \phantom{0 + 1 \cdot {}} 10 + 2 \cdot 100 + \dots + (n - 1) 10^{n-1} + n10^n \right) \\
+\hline
+-9a_n &= 9 \left( 1 + \phantom{1 \cdot {}} 10 + \phantom{1 \cdot {}} 100 + \dots + \phantom{(0 + 1)} 10^{n-1} - n10^n \right)
+\end{align*}
+
+Thus
+
+\begin{align*}
+a_n
+&= n10^n - \left( 1 + 10 + 100 + \dots + 10^{n-1} \right) \\
+&= n10^n - \frac{10^n - 1}{9} \\
+&= \frac{9n10^n - 10^n + 1}{9} \\
+&= \frac{(9n - 1) 10^n + 1}{9}. \\
+\end{align*}
+
+</article>
+</textarea>
