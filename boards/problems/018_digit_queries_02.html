@@ -100,13 +100,16 @@
 
 ## General Solution
 
-- Find the largest \( a_i \) less than \( k \).
-- Let \( n = i + 1 \) where \( i \) is the subscript of the largest \(
-  a_i \) found less than \( k \) in the previous step. Now we know
-  that the \( k \)th digit belongs to an integer with \( n \) digits.
+- Find the largest \( a_i \) less than \( k \). Call it \( a_{max} \).
+- Let \( n = max + 1 \) where \( max \) is the subscript of the
+  largest \( a_i \) found less than \( k \) in the previous step. Now
+  we know that the \( k \)th digit belongs to an integer with \( n \)
+  digits.
 - Compute the largest "full" integer on or before the \( k \)th place
   as follows:
   \[ p = (10^{n-1} - 1) + \left\lfloor \frac{k - a_{n-1}}{n} \right\rfloor. \]
+  Note that \( a_{n - 1} = a_{max} \). We will use \( a_{n - 1} \) in
+  the formulas for the sake of clarity.
 - Compute the distance between the last digit of \( p \) and the \( k
   \)th digit as follows:
   \[ r = (k - a_{n-1}) \bmod n. \]
