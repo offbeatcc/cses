@@ -3,4 +3,5 @@ a.out.dSYM
 input.txt
 expected.txt
 output.txt
+time.txt
 error.diff
