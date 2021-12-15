@@ -6,7 +6,7 @@
 
 const int N = 7;
 
-inline bool split_occurs(bool (&a)[N][N], int i, int j)
+bool split_occurs(bool (&a)[N][N], int i, int j)
 {
     return
         // Path hits top edge.
@@ -21,13 +21,13 @@ inline bool split_occurs(bool (&a)[N][N], int i, int j)
         (j == 0 && i != 0 && i != N - 1 &&
          a[i][j + 1] && !a[i - 1][j] && !a[i + 1][j]) ||
 
-        // Path hits bottom edge.
+        // Path hits right edge.
         (j == N - 1 && i != 0 && i != N - 1 &&
          a[i][j - 1] && !a[i - 1][j] && !a[i + 1][j]);
 }
 
 
-inline bool loop_occurs(bool (&a)[N][N], int i, int j)
+bool loop_occurs(bool (&a)[N][N], int i, int j)
 {
     return
         // Path is not touching the edges.
@@ -43,7 +43,8 @@ inline bool loop_occurs(bool (&a)[N][N], int i, int j)
 }
 
 
-void solve(bool (&a)[N][N], int i, int j, int move_num, std::string& path, int& result)
+void solve(bool (&a)[N][N], int i, int j, int move_num,
+           std::string& path, int& result)
 {
     // If we have an unavailable cell, prune the search.
     if (i == -1 || i == N || j == -1 || j == N || a[i][j]) {

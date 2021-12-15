@@ -71,7 +71,7 @@ int main()
 {
     // Optimization 3: Change path from std::string to char[].
     // Improvement: 0.9s -> 0.8s for full search.
-    char path[N * N - 1];
+    char path[N * N];
     std::cin >> path;
 
     bool a[N][N] = {{false}};
