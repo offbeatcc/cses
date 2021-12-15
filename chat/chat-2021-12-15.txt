@@ -1,0 +1,5 @@
+Problem: Grid Paths
+
+17:42 traxex: audio fine 😃
+17:42 traxex: chat path[N*N-1];  the -1 should not be there, you need space for 49 characters: 48 letters and '\0'
+17:42 traxex: actually not sure how cin works with a char array
