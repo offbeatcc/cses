@@ -9,19 +9,19 @@ const int N = 7;
 bool split_occurs(bool (&a)[N][N], int i, int j)
 {
     return
-        // Path hits top edge.
+        // Path hits top edge and creates a split.
         (i == 0 && j != 0 && j != N - 1 &&
          a[i + 1][j] && !a[i][j - 1] && !a[i][j + 1]) ||
 
-        // Path hits bottom edge.
+        // Path hits bottom edge and creates a split.
         (i == N - 1 && j != 0 && j != N - 1 &&
          a[i - 1][j] && !a[i][j - 1] && !a[i][j + 1]) ||
 
-        // Path hits left edge.
+        // Path hits left edge and creates a split.
         (j == 0 && i != 0 && i != N - 1 &&
          a[i][j + 1] && !a[i - 1][j] && !a[i + 1][j]) ||
 
-        // Path hits right edge.
+        // Path hits right edge and creates a split.
         (j == N - 1 && i != 0 && i != N - 1 &&
          a[i][j - 1] && !a[i - 1][j] && !a[i + 1][j]);
 }
